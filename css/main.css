@@ -2605,3 +2605,34 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         border-left: none;
     }
 }
+
+/* ===================================================================
+ * Echo theme for projects
+ * ------------------------------------------------------------------- */
+
+ .project-card {
+  margin-bottom: 2.5rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.5rem;
+  max-width: 90%;
+}
