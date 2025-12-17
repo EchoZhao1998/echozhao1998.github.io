@@ -12030,15 +12030,15 @@ a:hover {
 /* =========================
    Project Image Layout
    ========================= */
-
+/*
 .media.stream-item {
   display: flex;
   align-items: stretch;
-  margin-bottom: 3rem; /* spacing between projects */
-}
+  margin-bottom: 3rem;  /* spacing between projects 
+} 
 
 .project-image {
-  flex: 0 0 260px;   /* fixed visual column */
+  flex: 0 0 260px;   /* fixed visual column 
   max-width: 260px;
 }
 
@@ -12049,6 +12049,7 @@ a:hover {
   object-fit: cover;
   border-radius: 6px;
 }
+*/
 
 /* =========================
    Disable Isotope Layout
@@ -12077,4 +12078,48 @@ a:hover {
   background-color: #C97A2B;
   border-color: #C97A2B;
   color: #ffffff;
+}
+
+/* =========================
+   Project Image Layout (Responsive)
+   ========================= */
+
+/* Base image style */
+.project-image img {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Desktop only */
+@media (min-width: 992px) {
+  .media.stream-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+
+  .project-image {
+    flex-shrink: 0;
+  }
+}
+
+/* Tablet & Mobile */
+@media (max-width: 991.98px) {
+  .media.stream-item {
+    flex-direction: column;
+  }
+
+  .project-image {
+    margin-top: 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 420px;
+  }
 }
