@@ -2605,3 +2605,56 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         border-left: none;
     }
 }
+
+/* ==================================================
+   Brand Color Override add by Echo
+   ================================================== */
+
+:root {
+  --accent-color: #C97A2B;
+}
+
+/* Links */
+a {
+  color: #C97A2B;
+}
+
+a:hover,
+a:focus {
+  color: #a86422;
+}
+
+/* Blog titles */
+.entry__title a {
+  color: #1f1f1f;
+}
+
+.entry__title a:hover {
+  color: #C97A2B;
+}
+
+/* Buttons / CTAs */
+button,
+.btn,
+input[type="submit"] {
+  background-color: #C97A2B;
+  border-color: #C97A2B;
+  color: #ffffff;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
+  background-color: #a86422;
+  border-color: #a86422;
+}
+
+/* Navigation highlight */
+.s-header__nav .current a {
+  color: #C97A2B;
+}
+
+/* Footer links */
+.s-footer a:hover {
+  color: #C97A2B;
+}
