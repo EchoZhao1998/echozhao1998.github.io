@@ -11999,3 +11999,47 @@ a:hover {
 .network-icon i:hover {
   color: var(--accent-color);
 }
+
+
+/* Add-custom fix for media stream items to align stretch items vertically */
+.media.stream-item {
+  display: flex;
+  align-items: stretch;   /* KEY LINE */
+}
+
+/* Fix for project images */
+/* Right-side image column */
+.project-image {
+  width: 260px;          /* controls column width */
+  display: flex;
+}
+
+/* Image fills the project block height */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crop, do not stretch */
+  border-radius: 8px;
+}
+
+/* Adding breath space between project items */
+.media.stream-item {
+  margin-bottom: 3.5rem;
+}
+
+/* Fix for mobile pics display */
+@media (max-width: 768px) {
+  .media.stream-item {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .project-image img {
+    height: 200px;
+  }
+}
