@@ -12001,6 +12001,10 @@ a:hover {
 }
 
 
+/* =========================
+   Project Item Layout Fixes
+   ========================= */
+
 /* Add-custom fix for media stream items to align stretch items vertically */
 .media.stream-item {
   display: flex;
@@ -12026,30 +12030,6 @@ a:hover {
 .media.stream-item {
   margin-bottom: 3.5rem;
 }
-
-/* =========================
-   Project Image Layout
-   ========================= */
-/*
-.media.stream-item {
-  display: flex;
-  align-items: stretch;
-  margin-bottom: 3rem;  /* spacing between projects 
-} 
-
-.project-image {
-  flex: 0 0 260px;   /* fixed visual column 
-  max-width: 260px;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  max-height: 220px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-*/
 
 /* =========================
    Disable Isotope Layout
@@ -12122,4 +12102,37 @@ a:hover {
     width: 100%;
     max-width: 420px;
   }
+}
+
+/* =========================
+   update news page layout
+   ========================= */
+
+.newsitem {
+  margin-bottom: 1.2rem;
+}
+
+.newsdate {
+  font-weight: 600;
+  color: #1f2933;
+  white-space: nowrap;
+}
+
+.newscontent {
+  line-height: 1.6;
+}
+
+.newsdate {
+  position: relative;
+}
+
+.newsdate::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 0.4em;
+  width: 6px;
+  height: 6px;
+  background-color: #c97a2b; /* my accent color */
+  border-radius: 50%;
 }
