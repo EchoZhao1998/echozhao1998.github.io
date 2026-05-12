@@ -1,136 +1,93 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-	<title>Echo Zhao</title>
-	<meta charset="utf-8">
-	<meta name="author" content="Echo Zhao">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="images/icons/echoWeb-icon.png" type="image/icon type">
-	<link rel="stylesheet" type="text/css" href="css/academic.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" crossorigin="anonymous">
-	<script src="js/lazysizes.js" defer></script>
-	<script src="js/jquery.js" defer></script>
-	<script src="js/bootstrap.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" crossorigin="anonymous" defer></script>
-	<script src="js/year.js" defer></script>
-	<script>
-		window.addEventListener("load", function(){
-			window.cookieconsent.initialise({
-				"palette": {
-					"popup": {
-						"background": "#1F2933",
-						"text": "#fff"
-					},
-					"button": {
-						"background": "#fff",
-						"text": "#C97A2B"
-					}
-				},
-				"theme": "classic",
-				"content": {
-					"message": "This website uses cookies to ensure you get the best experience on my website.",
-					"dismiss": "Got it!",
-					"link": "Learn more",
-					"href": "https://www.cookiesandyou.com"
-				}
-			})});
-	</script>
+  <title>News — Echo Zhao</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Echo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Recent updates from Echo Zhao — things shipped, classes started, articles written, and the occasional life note." />
+  <link rel="icon" href="images/icons/echoWeb-icon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-		<div class="container">
-			<div class="d-none d-lg-inline-flex">
-				<a class="navbar-brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-			</div>
-			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-				<span><i class="fas fa-bars"></i></span>
-			</button>
-			<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-				<a class="navbar-brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-			</div>
-			<div class="navbar-collapse main-menu-item justify-content-end collapse" id="navbar-content">
-				<ul class="navbar-nav d-md-inline-flex">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html"><span>Home</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="news.html"><span>News</span></a>
-					</li>
-					<!--
-					<li class="nav-item">
-						<a class="nav-link" href="publications.html"><span>Publications</span></a>
-					</li>-->
-					<li class="nav-item">
-						<a class="nav-link" href="projects.html"><span>Projects</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.html"><span>Blogs</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html"><span>Contact</span></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
-	<section id="news" class="home-section wg-portfolio">
-		<div class="container" id="container">
-			<div class="row">
-				
-				<div class="col-12 col-lg-4 section-heading">
-					<h1>News & Update</h1>
-				</div>
+<nav class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="current" href="news.html">News</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-				<div class="col-md-9 maincontent">
-					<div class="mainitem no-bullet" id="news-list">
-						
-						<div class="newsitem">
-							<div class="newsdate">Jan 2026</div>
-							<div class="newscontent">
-								<a href="files/2026 Newyear letter.html">2026 News Letter</a>
-							</div>
-						</div>
+<main class="wrap">
 
-						<div class="newsitem">
-							<div class="newsdate">Dec 2025</div>
-							<div class="newscontent">Launched <a href="https://echozhao1998.github.io/">personal website</a> 
-								and a <a href="https://echozhao1998.github.io/imageShaper/">web-based image tool</a> exploring usability, accessibility, and independent experimentation.
-							</div>
-						</div>
+  <header class="page-header">
+    <h1>News</h1>
+    <p class="lede">A small log of recent updates &mdash; things shipped, classes started, articles written, the occasional life note. Roughly chronological, not exhaustive.</p>
+  </header>
 
-						<div class="newsitem">
-							<div class="newsdate">Sep 2025</div>
-							<div class="newscontent">Refocused research and writing on inclusive, human-centered design and accessibility in technology and work systems.</div>
-						</div>
+  <ul class="news-list">
 
-						<div class="newsitem">
-							<div class="newsdate">Feb 2025</div>
-							<div class="newscontent">Began Master's studies in <a href="https://www.monash.edu.my/study/postgraduate-and-research/information-technology/master-of-data-science">Data Science</a> at <a href="https://www.monash.edu.my/">Monash University Malaysia</a>.</div>
-						</div>
+    <li class="news-item">
+      <div class="news-date">May 2026</div>
+      <div class="news-content">
+        Started attending BIM (Malaysian Sign Language) classes.
+      </div>
+    </li>
 
-						<div class="newsitem">
-							<div class="newsdate">Nov 2024</div>
-							<div class="newscontent">Appointed Design Director for the 16th <a href="https://chinaedsymposium.org/">China Education Symposium</a>, leading inclusive communication and visual strategy.</div>
-						</div>
+    <li class="news-item">
+      <div class="news-date">Jan 2026</div>
+      <div class="news-content">
+        Wrote my <a href="files/2026 Newyear letter.html">2026 New Year letter</a>.
+      </div>
+    </li>
 
-						<div class="newsitem">
-							<div class="newsdate">Oct 2021-Apr 2024</div>
-							<div class="newscontent">Worked at Apple (Shenzhen, China) across operations, business, and accessibility-focused initiatives.</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer class="site-footer">
-		<p class="ss-copyright">
-			© Wanting Echo Zhao <span class="current-year"></span>
-		</p>
-	</footer>
+    <li class="news-item">
+      <div class="news-date">Dec 2025</div>
+      <div class="news-content">
+        Launched this personal website, and shipped <a href="https://echozhao1998.github.io/imageShaper/" target="_blank" rel="noopener">ImageShaper</a> &mdash; a small web tool for cropping images into circles or rounded rectangles with transparent backgrounds.
+      </div>
+    </li>
+
+    <li class="news-item">
+      <div class="news-date">Feb 2025</div>
+      <div class="news-content">
+        Resumed my Master of Data Science at <a href="https://www.monash.edu.my/" target="_blank" rel="noopener">Monash University Malaysia</a>.
+      </div>
+    </li>
+
+    <li class="news-item">
+      <div class="news-date">Nov 2024</div>
+      <div class="news-content">
+        Took on the Design Director role for the 16th <a href="https://chinaedsymposium.org/" target="_blank" rel="noopener">China Education Symposium</a>, leading inclusive communication and visual strategy.
+      </div>
+    </li>
+
+  </ul>
+
+</main>
+
+<footer class="site-footer wrap">
+  <span>&copy; Wanting Echo Zhao <span id="year"></span></span>
+  <span>echozhao1998.github.io</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
-
 </html>

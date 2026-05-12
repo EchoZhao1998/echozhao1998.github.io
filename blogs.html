@@ -1,530 +1,220 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Echo's Blogs</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/icons/echoWeb-icon.png" type="image/icon type">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <script src="js/modernizr.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
+  <title>Blogs — Echo Zhao</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Echo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selected essays by Echo Zhao on technology, work, accessibility, and the kinds of attention systems make difficult. Most pieces also live on Medium." />
+  <link rel="icon" href="images/icons/echoWeb-icon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
+<body>
 
-<body id="top">
+<nav class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a class="current" href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
+<main class="wrap">
+
+  <header class="page-header">
+    <h1>Blogs</h1>
+    <p class="lede">A small selection of recent essays &mdash; pieces I want to point readers to first. Most also live on <a href="https://medium.com/@zhaowanting1998" target="_blank" rel="noopener" style="color: var(--accent); border-bottom: 1px solid var(--accent); text-decoration: none;">Medium</a>. Chinese versions are usually on my WeChat Official Account (不二Talk).</p>
+  </header>
+
+  <ul class="blog-list">
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/cover_AIinTheWorkplace.png" alt="When AI Enters the Workplace cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="files/blog-AI_in_the_workplace.html">When AI Enters the Workplace, Who Is Still Thinking?</a>
+        </h2>
+        <p class="blog-excerpt">
+          If AI can now generate almost any artifact on demand, what exactly are we still holding humans accountable for inside our organizations &mdash; speed, or sense? Output, or understanding?
+        </p>
+        <div class="blog-links">
+          <a href="files/blog-AI_in_the_workplace.html">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/6gkX1Yk9bYk2b0YJ1Y6kVw" target="_blank" rel="noopener">阅读全文（中文）</a>
         </div>
-    </div>
-
-    <!-- Header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="row">
-            <div class="s-header__content column">
-                <div class="s-header__brand">
-                    <h1 class="s-header__logotext">
-                        <a href="blogs.html" title="">Echo's Room</a>
-                    </h1>
-                    <p class="s-header__tagline">Private thoughts, learning notes, and Apple devices Tips, which enhance my productivity!</p>
-                    <p class="s-header__tagline">Welcome to see more articles on <strong><a href="https://medium.com/@zhaowanting1998" target="_blank">Medium</a></strong> and <strong>WeChat</strong> Official Account (不二Talk) 🫶🏻</p>
-                </div>
-            </div>
-        </div> <!-- end row -->
-
-        <nav class="s-header__nav-wrap">
-
-           <div class="row">
-
-                <ul class="s-header__nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <!-- <li><a href="publications.html">Publications</a></li>-->
-                    <li><a href="projects.html">Projects</a></li>
-                    <li class="current"><a href="blogs.html">Blogs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-
-           </div>
-
-        </nav> <!-- end #nav-wrap -->
-
-    </header> <!-- Header End -->
-
-
-
-    <!-- Content
-    ================================================== -->
-    <div class="s-content">
-
-        <div class="row">
-
-            <div id="main" class="s-content__main large-8 column">
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="files/blog-AI_in_the_workplace.html" title="">When AI Enters the Workplace, Who Is Still Thinking?</a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                            
-                                <!--<li>Echo Zhao</li> -->
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          if AI can now generate almost any artifact on demand, what exactly are we still holding humans accountable for inside our organizations — speed, or sense? Output, or understanding?
-                        </p>
-
-                        <p class="article-links">
-                            <a href="files/blog-AI_in_the_workplace.html">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/6gkX1Yk9bYk2b0YJ1Y6kVw">
-                                阅读全文（中文）
-                            </a>  
-                        </p>
-                    
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/cover_AIinTheWorkplace.png"
-                                 srcset="images/blogCover/cover_AIinTheWorkplace.png 1000w,
-                                         images/blogCover/cover_AIinTheWorkplace.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="When AI Enters the Workplace, Who Is Still Thinking?">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="files/Involution Without Exit.pdf" title="">Involution Without Exit</a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                            
-                                <!--<li>Echo Zhao</li> -->
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          We are building systems that grow ever more powerful, while shrinking the space in which human judgment can matter. We are optimizing faster than we are learning how to live inside what we have built. To see this clearly is already a form of resistance.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="files/Involution Without Exit.pdf">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/p7fgez5ir03fKgkNVrvB3w">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-                    
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/involution.png"
-                                 srcset="images/blogCover/involution.png 1000w,
-                                         images/blogCover/involution.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="Involution Without Exit">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-                
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/why-dei-struggles-to-show-roi-and-what-research-can-actually-do-15b1452b0c9e" title="">Why DEI Struggles to Show ROI — and What Research Can Actually Do</a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                            
-                                <!--<li>Echo Zhao</li> -->
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          DEI doesn't fail because it lacks value. It fails because its value is rarely visible on short-term financial reports.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/why-dei-struggles-to-show-roi-and-what-research-can-actually-do-15b1452b0c9e">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/LIOFYiViZRELEgp_ruG61A">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-                    
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/DEIinWorkplace.png"
-                                 srcset="images/blogCover/DEIinWorkplace.png 1000w,
-                                         images/blogCover/DEIinWorkplace.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="DEI in Workplace">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-                
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/when-someone-pauses-on-a-sentence-writing-has-already-worked-6653925fcfc6" title="">When Someone Pauses on a Sentence, Writing Has Already Worked</a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                            
-                                <!--<li>Echo Zhao</li> -->
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          In a time when content is abundant and attention is scarce, careful reading always the fuel for my writing.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/when-someone-pauses-on-a-sentence-writing-has-already-worked-6653925fcfc6">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/qpRFRr2gw8v5fHee3JAhag">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-                    
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/writing-powerOfWords-121425.png"
-                                 srcset="images/blogCover/writing-powerOfWords-121425.png 1000w,
-                                         images/blogCover/writing-powerOfWords-121425.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="power of words">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/ai-isnt-the-threat-ambiguity-is-and-only-leaders-who-understand-this-will-win-d53d9d8a16c4" title="">
-                                AI Isn't the Threat, Ambiguity Is, and Only Leaders Who Understand This Will Win
-                            </a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                              
-                                <!-- <li>Echo Zhao</li> -->
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          Whenever markets become more uncertain, complex, or risky, the demand for human judgment increases.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/ai-isnt-the-threat-ambiguity-is-and-only-leaders-who-understand-this-will-win-d53d9d8a16c4">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/Vesl718NYuuL0aE6Vu0bbQ">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/writing-aiIsn'tThreat-121225.png"
-                                 srcset="images/blogCover/writing-aiIsn'tThreat-121225.png 1000w,
-                                         images/blogCover/writing-aiIsn'tThreat-121225.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="AI robot and human custer servant">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/ignorance-i-live-in-a-trash-heap-f33ef23d2e2b" title="">
-                                Ignorance: I Live in a Trash Heap
-                            </a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                                <!-- <li>October 11, 2025</li> -->
-                                
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          We don't drown in what we lack-but in what we refuse to discard
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/ignorance-i-live-in-a-trash-heap-f33ef23d2e2b">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/VploRNfcUK45gMWIAzxJeQ">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/writing-Ignorance-101125.png"
-                                 srcset="images/blogCover/writing-Ignorance-101125.png 1000w,
-                                         images/blogCover/writing-Ignorance-101125.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="declustering the mind">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/when-a-system-stops-serving-people-losing-hearing-wasnt-the-hardest-part-navigating-the-5d6c226edcdb" title="">
-                                When a System Stops Serving People | Losing Hearing Wasn't the Hardest Part - Navigating the System Was
-                            </a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                                <!-- <li>12/12, 2025</li> -->
-                                
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          When a system sustains its procedures instead of serving people, it naturally evolves into a burden.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/when-a-system-stops-serving-people-losing-hearing-wasnt-the-hardest-part-navigating-the-5d6c226edcdb">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/Cueav85t9j6N7wirVeYDnA">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/Deafpolicy-121025.png"
-                                 srcset="images/blogCover/Deafpolicy-121025.png 1000w,
-                                         images/blogCover/Deafpolicy-121025.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="Policy and Deafness">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class="entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/why-being-organized-doesnt-mean-being-effective-97cd3a87821a" title="">
-                                Why Being Organized Doesn't Mean Being Effective
-                            </a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                                <!-- <li>12/07, 2025</li> -->
-                                
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          We have never had so many tools designed to make us effective. 
-                          And we have never felt so constantly behind.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/why-being-organized-doesnt-mean-being-effective-97cd3a87821a">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/uaaBmWiZFRazIRPJ1AWvNQ">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/Efficiency_L.png"
-                                 srcset="images/blogCover/Efficiency_L.png 1000w,
-                                         images/blogCover/Efficiency_L.png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="a dashboard showing productivity metrics">
-                        </div>
-                    </div>
-
-                </article> <!-- end entry -->
-
-                <article class = "entry">
-
-                    <header class="entry__header">
-
-                        <h2 class="entry__title h1">
-                            <a href="https://medium.com/@zhaowanting1998/human-kind-rethinking-human-nature-in-the-quiet-1148467ed54f" title="">
-                                Human'kind'? Rethinking Human Nature in the Quiet
-                            </a>
-                        </h2>
-
-                        <div class="entry__meta">
-                            <ul>
-                                <!-- <li>11/30, 2025</li> -->
-                                
-                            </ul>
-                        </div>
-
-                    </header>
-
-                    <div class="entry__content">
-                        <p>
-                          People don't act worse because they are evil, but because systems bring out the worst in them.
-                        </p>
-
-                        <p class="article-links">
-                            <a href="https://medium.com/@zhaowanting1998/human-kind-rethinking-human-nature-in-the-quiet-1148467ed54f">
-                                Read Full Article (EN)
-                            </a>
-                            <a href="https://mp.weixin.qq.com/s/Y3w4u6aVkFhz26a8Wd5lJQ">
-                                阅读全文（中文）
-                            </a>
-                        </p>
-
-                        <div class="entry__content-media">
-                            <img src="images/blogCover/Humankind_L(CH).png"
-                                 srcset="images/blogCover/Humankind_L(CH).png 1000w,
-                                         images/blogCover/Humankind_L(CH).png 500w"
-                                 sizes="(max-width: 585px) 100vw, 585px" alt="a INTJ person thinking about humanity">
-                        </div>
-                    </div>
-                </article> <!-- end entry -->
-            </div>
-        </div> <!-- end row -->
-    </div> <!-- end main -->
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="s-footer">
-
-        <div class="row s-footer__bottom">
-
-            <div class="large-6 tab-full column s-footer__info">
-                <h3 class="h6">About Echo's Room</h3>
-
-                <p>
-                Echo's Room is a space where I document reflections, learning notes, and ongoing inquiries - both to better understand my inner world and to share ideas that may resonate with others.
-                </p>
-                <p>
-                Over time, I also plan to curate selected book and film reviews from past years, once I find the right structure and context for them.
-                </p>
-                <p>
-                If you have ideas to exchange, projects to collaborate on, or simply feel like having a casual coffee conversation, feel free to
-                <a href="mailto:echozhao1998@gmail.com">reach out</a>.
-                </p>
-                <p>
-                Stay hungry! Stay foolish!
-                </p>
-            </div>
-
-            <div class="large-6 tab-full column">
-                <div class="row">
-                    <div class="large-8 tab-full column">
-                    </div>
-
-                    <div class="large-4 tab-full column">
-                        <h3  class="h6">Navigate</h3>
-
-                        <ul class="s-footer__list s-footer-list--nav group">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="news.html">News</a></li>
-                          <!--<li><a href="publications.html">Publications</a></li>-->
-                          <li><a href="projects.html">Projects</a></li>
-                          <li class="current"><a href="blogs.html">Blogs</a></li>
-                          <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ss-copyright">
-                <span>© Wanting Echo Zhao <span class="current-year"></span></span>
-            </div>
-            <!--
-            <p class="powered-by">
-                Powered by Keep It Simple from <a href="https://www.styleshout.com/">StyleShout</a>
-            </p> -->
-
-        </div> <!-- end footer__bottom -->
-
-
-        <div class="ss-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z"/></svg>
-            </a>
-        </div> <!-- end ss-go-top -->
-
-   </footer> <!-- end Footer-->
-</div>
-</div>
-
-
-   <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/year.js"></script>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/involution.png" alt="Involution Without Exit cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="files/Involution Without Exit.pdf" target="_blank" rel="noopener">Involution Without Exit</a>
+        </h2>
+        <p class="blog-excerpt">
+          We are building systems that grow ever more powerful, while shrinking the space in which human judgment can matter. We are optimizing faster than we are learning how to live inside what we have built. To see this clearly is already a form of resistance.
+        </p>
+        <div class="blog-links">
+          <a href="files/Involution Without Exit.pdf" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/p7fgez5ir03fKgkNVrvB3w" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/DEIinWorkplace.png" alt="DEI in workplace cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/why-dei-struggles-to-show-roi-and-what-research-can-actually-do-15b1452b0c9e" target="_blank" rel="noopener">Why DEI Struggles to Show ROI &mdash; and What Research Can Actually Do</a>
+        </h2>
+        <p class="blog-excerpt">
+          DEI doesn't fail because it lacks value. It fails because its value is rarely visible on short-term financial reports.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/why-dei-struggles-to-show-roi-and-what-research-can-actually-do-15b1452b0c9e" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/LIOFYiViZRELEgp_ruG61A" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/writing-powerOfWords-121425.png" alt="The power of words cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/when-someone-pauses-on-a-sentence-writing-has-already-worked-6653925fcfc6" target="_blank" rel="noopener">When Someone Pauses on a Sentence, Writing Has Already Worked</a>
+        </h2>
+        <p class="blog-excerpt">
+          In a time when content is abundant and attention is scarce, careful reading is always the fuel for my writing.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/when-someone-pauses-on-a-sentence-writing-has-already-worked-6653925fcfc6" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/qpRFRr2gw8v5fHee3JAhag" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/writing-aiIsn'tThreat-121225.png" alt="AI Isn't the Threat cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/ai-isnt-the-threat-ambiguity-is-and-only-leaders-who-understand-this-will-win-d53d9d8a16c4" target="_blank" rel="noopener">AI Isn't the Threat, Ambiguity Is &mdash; and Only Leaders Who Understand This Will Win</a>
+        </h2>
+        <p class="blog-excerpt">
+          Whenever markets become more uncertain, complex, or risky, the demand for human judgment increases.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/ai-isnt-the-threat-ambiguity-is-and-only-leaders-who-understand-this-will-win-d53d9d8a16c4" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/Vesl718NYuuL0aE6Vu0bbQ" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/writing-Ignorance-101125.png" alt="Decluttering the mind cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/ignorance-i-live-in-a-trash-heap-f33ef23d2e2b" target="_blank" rel="noopener">Ignorance: I Live in a Trash Heap</a>
+        </h2>
+        <p class="blog-excerpt">
+          We don't drown in what we lack &mdash; but in what we refuse to discard.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/ignorance-i-live-in-a-trash-heap-f33ef23d2e2b" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/VploRNfcUK45gMWIAzxJeQ" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/Deafpolicy-121025.png" alt="Policy and deafness cover">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/when-a-system-stops-serving-people-losing-hearing-wasnt-the-hardest-part-navigating-the-5d6c226edcdb" target="_blank" rel="noopener">When a System Stops Serving People &mdash; Losing Hearing Wasn't the Hardest Part, Navigating the System Was</a>
+        </h2>
+        <p class="blog-excerpt">
+          When a system sustains its procedures instead of serving people, it naturally evolves into a burden.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/when-a-system-stops-serving-people-losing-hearing-wasnt-the-hardest-part-navigating-the-5d6c226edcdb" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/Cueav85t9j6N7wirVeYDnA" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/Efficiency_L.png" alt="A dashboard of productivity metrics">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/why-being-organized-doesnt-mean-being-effective-97cd3a87821a" target="_blank" rel="noopener">Why Being Organized Doesn't Mean Being Effective</a>
+        </h2>
+        <p class="blog-excerpt">
+          We have never had so many tools designed to make us effective. And we have never felt so constantly behind.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/why-being-organized-doesnt-mean-being-effective-97cd3a87821a" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/uaaBmWiZFRazIRPJ1AWvNQ" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="blog-entry">
+      <div class="blog-thumb">
+        <img src="images/blogCover/Humankind_L(CH).png" alt="An INTJ person thinking about humanity">
+      </div>
+      <div class="blog-body">
+        <h2 class="blog-title">
+          <a href="https://medium.com/@zhaowanting1998/human-kind-rethinking-human-nature-in-the-quiet-1148467ed54f" target="_blank" rel="noopener">Human'kind'? Rethinking Human Nature in the Quiet</a>
+        </h2>
+        <p class="blog-excerpt">
+          People don't act worse because they are evil, but because systems bring out the worst in them.
+        </p>
+        <div class="blog-links">
+          <a href="https://medium.com/@zhaowanting1998/human-kind-rethinking-human-nature-in-the-quiet-1148467ed54f" target="_blank" rel="noopener">Read full article (EN)</a>
+          <a href="https://mp.weixin.qq.com/s/Y3w4u6aVkFhz26a8Wd5lJQ" target="_blank" rel="noopener">阅读全文（中文）</a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+</main>
+
+<footer class="site-footer wrap">
+  <span>&copy; Wanting Echo Zhao <span id="year"></span></span>
+  <span>echozhao1998.github.io</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
-
 </html>
