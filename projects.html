@@ -1,376 +1,241 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-	<title>Echo Zhao</title>
-	<meta charset="utf-8">
-	<meta name="author" content="Echo Zhao">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="images/icons/echoWeb-icon.png" type="image/icon type">
-	<link rel="stylesheet" type="text/css" href="css/academic.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" crossorigin="anonymous">
-	<script src="js/lazysizes.js" defer></script>
-	<script src="js/jquery.js" defer></script>
-	<script src="js/bootstrap.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" crossorigin="anonymous" defer></script>
-	<script src="js/year.js" defer></script>
-	<script>
-		window.addEventListener("load", function(){
-			window.cookieconsent.initialise({
-				"palette": {
-					"popup": {
-						"background": "#1F2933",
-						"text": "#fff"
-					},
-					"button": {
-						"background": "#fff",
-						"text": "#C97A2B"
-					}
-				},
-				"theme": "classic",
-				"content": {
-					"message": "This website uses cookies to ensure you get the best experience on my website.",
-					"dismiss": "Got it!",
-					"link": "Learn more",
-					"href": "https://www.cookiesandyou.com"
-				}
-			})});
-	</script>
+  <title>Projects — Echo Zhao</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Echo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selected projects by Echo Zhao — research, data analysis, editorial direction, and self-built tools at the intersection of data, design, and inclusion." />
+  <link rel="icon" href="images/icons/echoWeb-icon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-		<div class="container">
-			<div class="d-none d-lg-inline-flex">
-				<a class="navbar-brand" href="https://echozhao1998.github.io">Echo Zhao</a>
-			</div>
-			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-				<span><i class="fas fa-bars"></i></span>
-			</button>
-			<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-				<a class="navbar-brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-			</div>
-			<div class="navbar-collapse main-menu-item justify-content-end collapse" id="navbar-content">
-				<ul class="navbar-nav d-md-inline-flex">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html"><span>Home</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="news.html"><span>News</span></a>
-					</li>
-					<!--
-					<li class="nav-item">
-						<a class="nav-link" href="publications.html"><span>Publications</span></a>
-					</li>
-					-->
 
-					<li class="nav-item">
-						<a class="nav-link active" href="projects.html"><span>Projects</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.html"><span>Blogs</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html"><span>Contact</span></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<nav class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a class="current" href="projects.html">Projects</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-	<section id="projects" class="home-section wg-portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4 section-heading">
-					<h1>Projects</h1>
-					<a>Selected work at the intersection of design, strategy, and execution - spanning editorial systems, cross-cultural communication, and operational delivery.</a>
-				</div>
+<main class="wrap">
 
-				<div class="col-12 col-lg-8">
-					<!-- <div class="media stream-item mb-4"> -->
-					<span class="d-none default-project-filter">*</span>
-					<div class="project-toolbar">
-						<div class="project-filters">
-							<div class="btn-toolbar">
-							</div>
-						</div>
-					</div>
+  <header class="page-header">
+    <h1>Projects</h1>
+    <p class="lede">Selected work at the intersection of data, design, and inclusion &mdash; spanning research, editorial systems, cross-cultural communication, and operational delivery.</p>
+  </header>
 
-					<!--WAG White Paper-->
-					<div class="col-12 isotope-item js-id-python js-id-featured"><!-- style="position: absolute; left: 0px; top: 0px;"> -->
-						<div class="media stream-item">
-							<div class="media-body">
-								<h3 class="article-title mb-0 mt-0">
-									Symbiotic Workplace: 2026 China Inclusive Workplace Exemplary Case White Paper
-								</h3>
-								<div class="article-style">
-									Co-authored and supported editorial development of “Symbiotic Workplace: 2026 China Inclusive Workplace Exemplary Case White Paper,” covering 20 companies across six domains: inclusive culture, gender equality, intergenerational integration, disability inclusion, employee well-being, and CSR.
-								</div>
-								
-								<div class="btn-links">
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/White_paper_WAG.pdf" target="_blank" rel="noopener">
-										<i class="fas fa-file mr-1"></i>
-										View Handbook [EN]
-									</a>
-								</div>
-							</div>
-							<div class="project-image">
-								<img src="images/project/WAG_White_paper cover.png" alt="symbiotic workplace white paper">
-							</div>
-						</div>
+  <!-- 01. Symbiotic Workplace White Paper -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/WAG_White_paper cover.png" alt="Symbiotic Workplace White Paper cover">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        White paper<span>&middot;</span>Co-authored<span>&middot;</span>DEI<span>&middot;</span>2026
+      </div>
+      <h2 class="project-title">Symbiotic Workplace &mdash; 2026 China Inclusive Workplace Exemplary Case White Paper</h2>
+      <p class="project-desc">
+        Co-authored and supported editorial development of a white paper covering 20 companies across six domains: inclusive culture, gender equality, intergenerational integration, disability inclusion, employee well-being, and CSR.
+      </p>
+      <div class="project-links">
+        <a href="files/White_paper_WAG.pdf" target="_blank" rel="noopener">View handbook [EN]</a>
+      </div>
+    </div>
+  </article>
 
-					<!-- Retirement age Research -->
-					<div class="col-12 isotope-item js-id-python js-id-featured"><!-- style="position: absolute; left: 0px; top: 0px;"> -->
-						<div class="media stream-item">
-							<div class="media-body">
-								<h3 class="article-title mb-0 mt-0">
-									Retirement Age as a Structural DEI Variable
-								</h3>
-								<div class="article-style">
-									A data-driven analysis of how statutory retirement age operates as a time-based rule shaping gender inequality across the lifecycle.
-									Using cross-country public data and policy comparison, the project translates complex evidence into a concise, executive-ready handbook.
-								</div>
-								
-								<div class="btn-links">
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/retirement_DEIresearch_handbook.pdf" target="_blank" rel="noopener">
-										<i class="fas fa-file mr-1"></i>
-										View Handbook [EN]
-									</a>
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-   									href="https://medium.com/@zhaowanting1998/retirement-age-is-not-a-neutral-rule-9b6d36161549"
-   									target="_blank" rel="noopener">
-  										<i class="fas fa-pen-nib mr-1"></i>
-  											Read Article
-									</a>
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-   									href="https://mp.weixin.qq.com/s/rE-v2Zj-0Pz0EX0voxleLw"
-   									target="_blank" rel="noopener">
-  										<i class="fas fa-pen-nib mr-1"></i>
-  											 阅读文章
-									</a>
-								</div>
-							</div>
-							<div class="project-image">
-								<img src="images/project/RetirementDEIcover.png" alt="Aging Health Expenditure Report">
-							</div>
-						</div>
+  <!-- 02. Retirement Age DEI Research -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/RetirementDEIcover.png" alt="Retirement Age DEI handbook cover">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Data analysis<span>&middot;</span>Policy<span>&middot;</span>DEI<span>&middot;</span>Published
+      </div>
+      <h2 class="project-title">Retirement Age as a Structural DEI Variable</h2>
+      <p class="project-desc">
+        A data-driven analysis of how statutory retirement age operates as a time-based rule shaping gender inequality across the lifecycle. Using cross-country public data and policy comparison, the project translates complex evidence into a concise, executive-ready handbook.
+      </p>
+      <div class="project-links">
+        <a href="files/retirement_DEIresearch_handbook.pdf" target="_blank" rel="noopener">View handbook [EN]</a>
+        <a href="https://medium.com/@zhaowanting1998/retirement-age-is-not-a-neutral-rule-9b6d36161549" target="_blank" rel="noopener">Read on Medium</a>
+        <a href="https://mp.weixin.qq.com/s/rE-v2Zj-0Pz0EX0voxleLw" target="_blank" rel="noopener">阅读文章</a>
+      </div>
+    </div>
+  </article>
 
-					
+  <!-- 03. Aging Health Expenditure -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/agingHE_onePageReport.png" alt="Aging Health Expenditure one-page report">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Data analysis<span>&middot;</span>R<span>&middot;</span>Panel data<span>&middot;</span>Health policy
+      </div>
+      <h2 class="project-title">Aging Health Expenditure Data Analysis</h2>
+      <p class="project-desc">
+        A data-driven analysis of how population aging reshapes healthcare financing structures, using WHO and World Bank panel data (2000&ndash;2023).
+      </p>
+      <p class="project-desc">
+        Methods: panel data analysis (plm), data wrangling in R, and visual storytelling via ggplot and Figma.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/EchoZhao1998/healthcare-expenditure-under-aging-era" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://medium.com/@zhaowanting1998/how-population-aging-is-reshaping-who-pays-for-healthcare-eb009224a824" target="_blank" rel="noopener">Read on Medium</a>
+        <a href="https://mp.weixin.qq.com/s/j7piio8VoXo1bHiYz_YPgQ" target="_blank" rel="noopener">阅读文章</a>
+      </div>
+    </div>
+  </article>
 
-					<!-- Aging Health Expenditure Data Analysis-->
-					<div class="col-12 isotope-item js-id-python js-id-featured"><!-- style="position: absolute; left: 0px; top: 0px;"> -->
-						<div class="media stream-item">
-							<div class="media-body">
-								<h3 class="article-title mb-0 mt-0">
-									 Aging Health Expenditure Data Analysis
-								</h3>
-								<div class="article-style">
-									A data-driven analysis of how population aging reshapes healthcare financing structures, using WHO and World Bank panel data (2000-2023).
-								</div>
-								<div class="article-style">
-  									Methods: panel data analysis (plm), data wrangling in R, and visual storytelling via ggplot and Figma.
-								</div>
-								<div class="btn-links">
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/EchoZhao1998/healthcare-expenditure-under-aging-era" target="_blank" rel="noopener">
-										<i class="fab fa-github mr-1"></i>
-											GitHub
-									</a>
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-   									href="https://medium.com/@zhaowanting1998/how-population-aging-is-reshaping-who-pays-for-healthcare-eb009224a824"
-   									target="_blank" rel="noopener">
-  										<i class="fas fa-pen-nib mr-1"></i>
-  											Read Article
-									</a>
-									<a class="btn btn-outline-primary my-1 mr-1 btn-sm"
-   									href="https://mp.weixin.qq.com/s/j7piio8VoXo1bHiYz_YPgQ"
-   									target="_blank" rel="noopener">
-  										<i class="fas fa-pen-nib mr-1"></i>
-  											 阅读文章
-									</a>
-								</div>
-							</div>
-							<div class="project-image">
-								<img src="images/project/agingHE_onePageReport.png" alt="Aging Health Expenditure Report">
-							</div>
-						</div>
+  <!-- 04. High Distinction Master's Coursework — grouped -->
+  <article class="project-card">
+    <div class="project-image accent">
+      <span>High Distinction<br>Master's Coursework</span>
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Master's coursework<span>&middot;</span>Monash University<span>&middot;</span>R<span>&middot;</span>Tableau<span>&middot;</span>R Shiny
+      </div>
+      <h2 class="project-title">Selected EDA case studies</h2>
+      <p class="project-desc">
+        A small selection of exploratory data analysis projects from my Master of Data Science program at Monash University, chosen for the breadth of methods, datasets, and storytelling formats. All received High Distinction.
+      </p>
+      <div class="sub-items">
+        <div class="sub-label">Studies</div>
+        <ul>
+          <li>
+            <span class="sub-name">NYC infrastructure, dog density, and bite-rate patterns</span>
+            <a class="sub-link" href="files/EDAProject/Infrasturacture-dog_density-bite_rate_in_NYC.pdf" target="_blank" rel="noopener">PDF</a>
+          </li>
+          <li>
+            <span class="sub-name">FIT5145 &mdash; Foundations of Data Science (R Markdown report)</span>
+            <a class="sub-link" href="files/EDAProject/Report.html" target="_blank" rel="noopener">HTML</a>
+          </li>
+          <li>
+            <span class="sub-name">Data analysis &amp; visualization in Tableau</span>
+            <a class="sub-link" href="files/EDAProject/Tableau_DA_report.pdf" target="_blank" rel="noopener">PDF</a>
+          </li>
+          <li>
+            <span class="sub-name">Distribution of parrots in Australia &mdash; R Shiny app</span>
+            <a class="sub-link" href="https://github.com/EchoZhao1998/fit5147-PE2-parrotDistrubution-Rshiny" target="_blank" rel="noopener">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
 
-					<!-- CES Annual Handbook -->
-					<div class="isotope projects-container row js-layout-row" style="position: relative; height: 808.205px;">
-						<div class="col-12 isotope-item js-id-python js-id-featured"><!--style="position: absolute; left: 0px; top: 0px;">-->
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										CES Annual Handbook
-									</h3>
-									<div class="article-style">
-										Directed the official CES annual handbook documenting forums, keynote speakers, creators, and the organizing committee.
-									 </div>
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/[EN]CES Handbook spread.pdf" target="_blank" rel="noopener">
-											<!-- <i class="fab fa-github mr-1"></i> Replaced with View Handbook[EN], without icon-->
-											<i class="fas fa-file mr-1"></i>
-											View Handbook [EN]
-										</a>
-										
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/[CN]CES会刊.pdf" target="_blank" rel="noopener">
-											<!-- <i class="fas fa-globe mr-1"></i> -->
-											<i class="fas fa-file mr-1"></i>
-											View Handbook [CH]
-										</a>
-										<!--
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://duoally.github.io/about.html" target="_blank" rel="noopener">
-											<i class="fas fa-info-circle mr-1"></i>
-											About
-										</a>
-										-->
-									</div>
-								</div>
-								<div class="project-image">
-									<img src="images/project/ces-annual-handbook.png" alt="CES Annual Handbook">
-								</div>
-							</div>
-						</div>
+  <!-- 05. Shape Cropper / ImageShaper -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/shapeCropper.png" alt="Shape Cropper web tool">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Web tool<span>&middot;</span>HTML / CSS / JS<span>&middot;</span>Self-built
+      </div>
+      <h2 class="project-title">Shape Cropper &mdash; ImageShaper</h2>
+      <p class="project-desc">
+        A simple web tool to crop images into circles or rounded rectangles and export as transparent PNG. Mobile-friendly and retina-ready.
+      </p>
+      <p class="project-desc">
+        Built because the existing tools either charged a subscription or did not export with a transparent background. I needed a circular icon for my own site, so I shipped this in a weekend.
+      </p>
+      <div class="project-links">
+        <a href="https://echozhao1998.github.io/imageShaper/" target="_blank" rel="noopener">Live demo</a>
+        <a href="https://github.com/EchoZhao1998/imageShaper" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </article>
 
-						<!-- CES Outreach Handbook -->
-						<div class="col-12 isotope-item js-id-python js-id-featured"><!-- style="position: absolute; left: 0px; top: 161.641px;"> -->
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										CES Outreach Handbook
-									</h3>
-									<div class="article-style">
-										Produced a bilingual outreach handbook introducing the China Education Symposium to external audiences.
-									</div>
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/[EN]CES Handbook spread.pdf" target="_blank" rel="noopener">
-											<!--<i class="fab fa-github mr-1"></i> Replaced with View Handbook[EN], without icon -->
-											<i class="fas fa-file mr-1"></i>
-											View Handbook [EN]
-										</a>
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/CES 外联手册.pdf" target="_blank" rel="noopener">
-											<i class="fas fa-file mr-1"></i>
-											View Handbook [CH]
-										</a>
-									</div>
-								</div>
-								<div class="project-image">
-									<img src="images/project/ 外联手册封面.png" alt="The CES Outreach Handbook">
-								</div>
-							</div>
-						</div>
+  <!-- 06. Clearwater Employer Branding -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/clearwater-handbook-pic.png" alt="Clearwater employer branding handbook">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Employer branding<span>&middot;</span>Editorial<span>&middot;</span>Visual design
+      </div>
+      <h2 class="project-title">Clearwater Employer Branding Proposal</h2>
+      <p class="project-desc">
+        Led research, content structure, and visual design for an employer branding handbook, translating EVP insights into a clear, human-centered narrative.
+      </p>
+      <p class="project-desc" style="color: var(--muted); font-size: 13px;">
+        The handbook below removes privacy-sensitive information; for demonstration purposes only.
+      </p>
+      <div class="project-links">
+        <a href="files/Clearwater_Handbook_RemovePrivacy.pdf" target="_blank" rel="noopener">View handbook</a>
+      </div>
+    </div>
+  </article>
 
-						<!-- CES Merchandise Design & Operations -->
-						<div class="col-12 isotope-item js-id-python js-id-featured"><!-- style="position: absolute; left: 0px; top: 323.282px;" --> 
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										CES Merchandise Design & Operations
-									</h3>
-									<div class="article-style">
-										Led the design and delivery of CES creative merchandise, including apparel, canvas bags, stationery, and accessories.
-									</div>
-									
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/ces-merchandise.html" target="_blank" rel="noopener">
-											<i class="fas fa-images mr-1"></i>
-											View Photos
-										</a>
-										<!--<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/Cloud-Based Deep Learning End-To-End Full-Stack Handwritten Digit Recognition.pdf" target="_blank" rel="noopener">
-											<i class="fas fa-file mr-1"></i>
-											Paper
-										</a>-->
-									</div>
-									
-								</div>
-								<div class="project-image">
-									<img src="images/project/ces-merchandise.jpg" alt="CES Merchandise Design">
-								</div>															
-							</div>
-						</div>
+  <!-- 07. CES Editorial Direction (combined Annual + Outreach) -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/ces-annual-handbook.png" alt="CES Annual Handbook cover">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Editorial<span>&middot;</span>Bilingual<span>&middot;</span>Visual identity<span>&middot;</span>Design direction
+      </div>
+      <h2 class="project-title">CES Editorial Direction</h2>
+      <p class="project-desc">
+        Directed the official CES Annual Handbook and the bilingual Outreach Handbook for the China Education Symposium, documenting forums, keynote speakers, creators, and the organizing committee &mdash; and introducing CES to external audiences in both English and Chinese.
+      </p>
+      <div class="project-links">
+        <a href="files/[EN]CES Handbook spread.pdf" target="_blank" rel="noopener">Annual Handbook [EN]</a>
+        <a href="files/[CN]CES会刊.pdf" target="_blank" rel="noopener">Annual Handbook [CN]</a>
+        <a href="files/CES Outreach Handbook.pdf" target="_blank" rel="noopener">Outreach Handbook [EN]</a>
+        <a href="files/CES 外联手册.pdf" target="_blank" rel="noopener">Outreach Handbook [CN]</a>
+      </div>
+    </div>
+  </article>
 
-						<!-- Clearwater Employer Branding Proposal -->
-						<div class="col-12 isotope-item js-id-android js-id-java"> <!-- style="position: absolute; left: 0px; top: 484.923px;" -->
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										Clearwater Employer Branding Proposal
-									</h3>
-									<div class="article-style">
-										Led research, content structure, and visual design for an employer branding handbook,translating EVP insights into a clear, human-centered narrative.
-										The handbook below removes privacy-sensitive information.only for demonstration purpose.
-									</div>
-									<div class="article-style">
-										The handbook below removes privacy-sensitive information.only for demonstration purpose.
-									</div>
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="files/Clearwater_Handbook_RemovePrivacy.pdf" target="_blank" rel="noopener">
-											<!-- <i class="fas fa-globe mr-1"></i> -->
-											<i class="fas fa-file mr-1"></i>
-											View Handbook
-										</a>
-									</div>
-								</div>
-								<div class="project-image">
-									<img src="images/project/clearwater-handbook-pic.png" alt="Clearwater Handbook">
-								</div>
-							</div>
-						</div>
+  <!-- 08. CES Merchandise -->
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project/ces-merchandise.jpg" alt="CES Merchandise design">
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        Visual design<span>&middot;</span>Production<span>&middot;</span>Operations
+      </div>
+      <h2 class="project-title">CES Merchandise Design &amp; Operations</h2>
+      <p class="project-desc">
+        Led the design and delivery of CES creative merchandise, including apparel, canvas bags, stationery, and accessories.
+      </p>
+      <div class="project-links">
+        <a href="files/ces-merchandise.html" target="_blank" rel="noopener">View photos</a>
+      </div>
+    </div>
+  </article>
 
-						<!-- web tool: shape cropper -->
-						<div class="col-12 isotope-item js-id-cpp js-id-featured" ><!--</div>style="position: absolute; left: 0px; top: 646.564px;">-->
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										Shape Cropper
-									</h3>
-									<div class="article-style">
-										A simple web tool to crop images into circles or rounded rectangles and export as transparent PNG.
-									</div>
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/EchoZhao1998/imageShaper" target="_blank" rel="noopener">
-											<i class="fab fa-github mr-1"></i>
-											GitHub
-										</a>
-									</div>
-								</div>
-								<div class="project-image">
-									<img src="images/project/shapeCropper.png" alt="Shape Cropper">
-								</div>
-							</div>
-						</div> <!-- end of Shape Cropper -->
+</main>
 
-						<!-- 
-						<div class="col-12 isotope-item js-id-java js-id-featured" style="position: absolute; left: 0px; top: 808.205px;">
-							<div class="media stream-item">
-								<div class="media-body">
-									<h3 class="article-title mb-0 mt-0">
-										Learning in Virtual Environments (LIVE)
-									</h3>
-									<div class="article-style">
-										Cluster Analysis on Subject Data in Immersive Virtual Environments.
-									</div>
-									<div class="btn-links">
-										<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ruidazeng/vr-navigation" target="_blank" rel="noopener">
-											<i class="fab fa-github mr-1"></i>
-											GitHub
-										</a>
-									</div>
-								</div>
-								<div class="ml-3">
-									<img src="images/poster.jpg" alt="LIVE">
-								</div>
-							</div>
-						</div>-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-			
-	<footer class="site-footer">
-		<p class="ss-copyright">
-			© Wanting Echo Zhao <span class="current-year"></span>
-		</p>
-	</footer>
+<footer class="site-footer wrap">
+  <span>&copy; Wanting Echo Zhao <span id="year"></span></span>
+  <span>echozhao1998.github.io</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
