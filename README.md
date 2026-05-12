@@ -1,6 +1,6 @@
 <div align="center">
 
-#  Echo's Personal Website 🧏🏼
+# Echo's Personal Website 🧏🏼
 ## https://echozhao1998.github.io/
 
 <a href='https://echozhao1998.github.io/'><img src='https://img.shields.io/badge/Website-Visit-gold'></a>
@@ -10,7 +10,6 @@
 
 [**About**](#about) | [**Explore**](#explore) | [**Contact**](#contact)
 
-<img src="images/avatars/selfwebREAD.ME.png" alt="ezquetocover" width="400"/>
 <p><small>There is only one heroism in the world: to see the world as it is, and to love it.</small></p>
 </div>
 
@@ -18,22 +17,34 @@
 
 ## About
 
-Welcome to [Echo's personal website](https://echozhao1998.github.io/), a digital space where a small portion of thoughts, projects, and ideas are recorded and shared with the world. This site serves as a reflection of creativity and exploration, offering a glimpse into Ruida's imagination projected onto the digital realm. 
+Welcome to [Echo's personal website](https://echozhao1998.github.io/) — a small corner of the internet where I document the work, ideas, and lived experience that shape who I am becoming.
+
+I am Echo Zhao, a Master of Data Science student at Monash University Malaysia. I am also a person living with NF2, a rare genetic condition that left me completely deaf in 2025 and gave me a severe Bell's palsy along the way. That intersection — data science, accessibility, and post-lingually deafened life — is the lens behind most of what you will find here.
+
+This site is part portfolio, part field notebook. It collects projects I have built, writing I am willing to stand behind, and the slow process of figuring out where my technical skills and my disability experience overlap most usefully.
 
 ---
 
 ## Explore
 
-- **News**: Stay updated with Echo's latest activities, tracking my growth!
-  
-- **Projects**: Explore Echo's endeavors and latest projects.
+- **News** — Recent updates: things I am studying, attending, building, or recovering from.
 
-- **Blogs**: Delve into Echo's personal insights, covering topics from technology, DEI, self awareness.
+- **Projects** — Data science coursework, accessibility experiments, and the small creative work (illustration, merchandise design) that sits alongside the technical side.
 
-Take a look around!
+- **Blogs** — Longer-form writing on technology, accessibility, deaf identity, and the bits of self-awareness I am willing to put in public.
+
+- **Publications** — Academic writing produced during my master's program.
+
+Take a look around.
 
 ---
 
 ## Contact
 
-For any inquiries or further information, please visit the [Contact](https://echozhao1998.github.io/contact.html) page. 
+If anything here is useful to you, or if you work in accessibility, HCI, assistive technology, or inclusive design and would like to talk, the [Contact](https://echozhao1998.github.io/contact.html) page is the fastest way to reach me.
+
+I am most reachable in writing — email or text — which suits my hearing situation and tends to produce better conversations anyway.
+
+---
+
+<small>Site forked from a template by Ruida and gradually being rebuilt in my own voice.</small>
