@@ -1,0 +1,322 @@
+/* ============================================================
+   ezhozhao.github.io — site.css
+   Design system for the redesigned site.
+   Shared across index, news, projects, blogs, contact.
+   Last updated: 2026-05-12
+   ============================================================ */
+
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #FAFAFA;
+  --ink: #0A0A0A;
+  --ink-soft: #1A1A1A;
+  --muted: #5C5C5C;
+  --hint: #8A8A8A;
+  --hairline: #EAEAEA;
+  --accent: #1A2B4A;
+
+  --display: 'Jost', 'Futura', -apple-system, sans-serif;
+  --body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  --wrap-max: 1100px;
+  --prose-max: 720px;
+}
+
+/* ---------- Reset / base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ---------- Layout container ---------- */
+.wrap {
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Nav ---------- */
+.site-nav { border-bottom: 1px solid var(--hairline); }
+.site-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+.site-nav .brand {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+.site-nav ul {
+  display: flex;
+  gap: 32px;
+}
+.site-nav ul a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease;
+}
+.site-nav ul a:hover,
+.site-nav ul a.current { color: var(--ink); }
+.site-nav ul a.current {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 96px 0 64px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+.portrait {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #E5E5E5;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 16px 40px rgba(10, 20, 40, 0.08),
+    0 4px 12px rgba(10, 20, 40, 0.04);
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-text h1 {
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.hero-text .tagline {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+.hero-text p {
+  max-width: 560px;
+  margin-bottom: 20px;
+  color: var(--ink-soft);
+}
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 32px;
+}
+.social-row a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 4px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.social-row a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Section labels (shared) ---------- */
+.section-label {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Info strip ---------- */
+.info-strip {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 40px 0;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+.info-block .section-label { margin-bottom: 16px; display: block; }
+.info-block li {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+.info-block li small {
+  color: var(--muted);
+  font-size: 13px;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ---------- Skills ---------- */
+.skills {
+  padding: 32px 0 8px;
+  border-bottom: 1px solid var(--hairline);
+}
+.skills-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  padding: 12px 0;
+  align-items: baseline;
+}
+.skills-row .items {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.skills-row .items span { color: var(--muted); margin: 0 8px; }
+
+/* ---------- Certifications ---------- */
+.certs {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.certs h3 {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.certs ul { max-width: var(--prose-max); }
+.certs li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--hairline);
+  font-size: 15px;
+  align-items: baseline;
+}
+.certs li:last-child { border-bottom: 1px solid var(--hairline); }
+.certs .cert-name { color: var(--ink); }
+.certs .cert-meta {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.certs .more {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.certs .more a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ---------- What I work on ---------- */
+.work { padding: 64px 0; }
+.work h2 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+.work-list { max-width: var(--prose-max); }
+.work-list li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: baseline;
+}
+.work-list li:first-child { border-top: 1px solid var(--hairline); }
+.work-list .num {
+  font-family: var(--display);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.work-list .desc {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding: 32px 0;
+  margin-top: 48px;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 48px 0 32px;
+  }
+  .portrait { max-width: 240px; }
+  .hero-text h1 { font-size: 40px; }
+  .info-strip { grid-template-columns: 1fr; gap: 32px; }
+  .skills-row { grid-template-columns: 1fr; gap: 4px; }
+  .certs li { grid-template-columns: 1fr; gap: 4px; }
+
+  .nav-toggle { display: inline-block; }
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 16px 0 8px;
+    border-top: 1px solid var(--hairline);
+    margin-top: 16px;
+  }
+  .site-nav.open ul { display: flex; }
+  .site-nav.open .site-nav-inner { flex-wrap: wrap; }
+}
