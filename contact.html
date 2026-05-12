@@ -1,144 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-	<title>Echo Zhao</title>
-	<meta charset="utf-8">
-	<meta name="author" content="Echo Zhao">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="images/icons/echoWeb-icon.png" type="image/icon type">
-	<link rel="stylesheet" type="text/css" href="css/academic.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/contact-style.css">
-	
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-	<script src="js/lazysizes.js" defer></script>
-	<script src="js/jquery.js" defer></script>
-	<script src="js/bootstrap.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" crossorigin="anonymous" defer></script>
-	<script src="js/year.js" defer></script>
-	<script>
-		window.addEventListener("load", function(){
-			window.cookieconsent.initialise({
-				"palette": {
-					"popup": {
-						"background": "#1F2933",
-						"text": "#fff"
-					},
-					"button": {
-						"background": "#fff",
-						"text": "#C97A2B"
-					}
-				},
-				"theme": "classic",
-				"content": {
-					"message": "This website uses cookies to ensure you get the best experience on my website.",
-					"dismiss": "Got it!",
-					"link": "Learn more",
-					"href": "https://www.cookiesandyou.com"
-				}
-			})});
-	</script>
-	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-	<style>
-		/* Add margin to push the content below the navbar */
-		.contact-page-container {
-			margin-top: 80px; /* Adjust to match navbar height + desired spacing */
-		}
-	</style>
+  <title>Contact — Echo Zhao</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Echo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Echo Zhao — based in Kuala Lumpur, reachable by email or LinkedIn." />
+  <link rel="icon" href="images/icons/echoWeb-icon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+
+  <!-- Leaflet for the map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-		<div class="container">
-			<div class="d-none d-lg-inline-flex">
-				<a class="navbar-brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-			</div>
-			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-				<span><i class="fas fa-bars"></i></span>
-			</button>
-			<div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-				<a class="navbar-brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-			</div>
-			<div class="navbar-collapse main-menu-item justify-content-end collapse" id="navbar-content">
-				<ul class="navbar-nav d-md-inline-flex">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html"><span>Home</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="news.html"><span>News</span></a>
-					</li>
 
-					<!--<li class="nav-item">
-						<a class="nav-link" href="publications.html"><span>Publications</span></a>
-					</li>-->
+<nav class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a class="current" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-					<li class="nav-item">
-						<a class="nav-link" href="projects.html"><span>Projects</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.html"><span>Blogs</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="contact.html"><span>Contact</span></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<main class="wrap">
 
-	<!-- Contact Page Content -->
-	<div class="contact-page-container">
-		<div class="container">
-			<div style="text-align:center">
-				<h2>Contact Me</h2>
-				<p>Download my <a href="files/masterCV.pdf" target="_blank" rel="noopener noreferrer">CV</a>, or leave me a message:</p>
-			</div>
-			<div class="row">
-				<div class="column">
-					<div id="map" style="width: 900px; height: 450px; max-width: 100%; max-height: 100%"></div>
-					<script>
-						var map = L.map('map').setView([3.0649, 101.6009], 15);
-						const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-							maxZoom: 18,
-							attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-						}).addTo(map);
+  <header class="page-header">
+    <h1>Contact</h1>
+    <p class="lede">If you have ideas to exchange, projects to collaborate on, or simply want to start a conversation &mdash; the fastest way to reach me is email or LinkedIn.</p>
+  </header>
 
-						var marker = L.marker([3.0649, 101.6009]).addTo(map)
-							.bindPopup('<strong>Based in</strong><br>Monash University Malaysia')
-					</script>
-				</div>
-				<div class="column">
-					<form action="https://getform.io/f/axovokob" method="POST">
+  <section class="contact-primary">
+    <span class="section-label">Email</span>
+    <div style="margin-top: 12px;">
+      <a class="contact-email" href="mailto:echozhao1998@gmail.com">echozhao1998@gmail.com</a>
+    </div>
 
-						<!-- Hidden input for formspree -->
-						
-						<input type="hidden" name="_subject" value="New message from echozhao1998.github.io">
-						<input type="hidden" name="_template" value="table">
-						<input type="hidden" name="_autoresponse" value="Thank you for reaching out! I will get back to you soon. - Echo">
+    <div class="contact-channels">
+      <a href="https://www.linkedin.com/in/wantingechozhao/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/EchoZhao1998" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://medium.com/@zhaowanting1998" target="_blank" rel="noopener noreferrer">Medium</a>
+      <a href="files/masterCV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+    </div>
 
-						<label for="name">Name</label>
-						<input type="text" id="name" required name="name" placeholder="Your name...">
-						<label for="email">Email</label>
-						<input type="email" id="email" required name="email" placeholder="Your email...">
-						<label for="subject">Message</label>
-						<textarea id="subject" required name="message" placeholder="Write something..." style="height:170px"></textarea>
-						<input type="submit" value="Submit">
-						<p style="font-size: 0.85em; color: #666;">
-							Your message will be sent directly to my inbox. I will not share your information.
-						</p>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Contact Page Content -->
+    <p class="contact-note">
+      I prefer written conversations &mdash; they tend to make for clearer, more considered exchanges. Please allow up to a few days for a reply during semester.
+    </p>
+  </section>
 
-	<footer class="site-footer">
-		<p class="ss-copyright">
-			© Wanting Echo Zhao <span class="current-year"></span>
-		</p>
-	</footer>
+  <section class="contact-map-section">
+    <span class="section-label">Based in</span>
+    <h2>Monash University Malaysia</h2>
+    <div id="map"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer wrap">
+  <span>&copy; Wanting Echo Zhao <span id="year"></span></span>
+  <span>echozhao1998.github.io</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Initialize Leaflet map once leaflet.js has loaded
+  window.addEventListener('load', function () {
+    if (typeof L === 'undefined') return;
+    var map = L.map('map', { scrollWheelZoom: false }).setView([3.0649, 101.6009], 15);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([3.0649, 101.6009]).addTo(map)
+      .bindPopup('<strong>Based in</strong><br>Monash University Malaysia');
+  });
+</script>
+
 </body>
 </html>
