@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shape Cropper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Shape Cropper</h1>
+
+<div class="control-group">
+  <label for="upload">Upload image</label>
+  <input type="file" id="upload" accept="image/*" />
+</div>
+
+<div class="control-group">
+  <label for="shapeSelect">Shape</label>
+  <select id="shapeSelect">
+    <option value="circle">Circle</option>
+    <option value="rounded-rect">Rounded rectangle</option>
+  </select>
+</div>
+
+<!-- Zoom slider -->
+<div class="control-group">
+  <label for="zoomRange">Zoom</label>
+  <input
+    type="range"
+    id="zoomRange"
+    min="0.5"
+    max="6"
+    step="0.01"
+    value="1"
+  />
+</div>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<!-- Export button -->
+<button id="exportBtn">Export PNG</button>
+
+<div class="footer-note">
+  Small & simple image cropper · Mobile friendly · Transparent PNG
+</div>
+<div class="footer-note">
+  Built by Echo Zhao · © <span id="year"></span> · <a href="https://github.com/EchoZhao1998/imageShaper">GitHub</a>
+</div>
+
+<script>
+  const upload = document.getElementById("upload");
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let scale = 1;
+  const MIN_SCALE = 0.5;
+  const MAX_SCALE = 3;
+
+  const zoomRange = document.getElementById("zoomRange");
+  
+  zoomRange.addEventListener("input", (e) => {
+    scale = Math.min(
+      MAX_SCALE,
+      Math.max(MIN_SCALE, parseFloat(e.target.value))
+    );
+    redraw();
+  });
+
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+
+    // Set physical canvas size
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+
+    // Scale context so all drawing uses logical pixels
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // Only recalc image position/size if image loaded
+    if (img) {
+      const canvasRatio = rect.width / rect.height;
+      const imgRatio = img.width / img.height;
+
+      if (imgRatio > canvasRatio) {
+        drawHeight = rect.height;
+        drawWidth = img.width * (rect.height / img.height);
+        imgX = -(drawWidth - rect.width) / 2;
+        imgY = 0;
+      } else {
+        drawWidth = rect.width;
+        drawHeight = img.height * (rect.width / img.width);
+        imgX = 0;
+        imgY = -(drawHeight - rect.height) / 2;
+      }
+    }
+
+    redraw();
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+
+  const shapeSelect = document.getElementById("shapeSelect");
+  const exportBtn = document.getElementById("exportBtn");
+
+  let img = null;
+
+  // image position
+  let imgX = 0;
+  let imgY = 0;
+
+  // image draw size (IMPORTANT: global)
+  let drawWidth = 0;
+  let drawHeight = 0;
+
+  // dragging state (Pointer Events)
+  let isDragging = false;
+  let activePointerId = null;
+  let startX = 0;
+  let startY = 0;
+
+  // shapes
+  let currentShape = "circle"; // default shape
+
+  resizeCanvas();
+
+  // e.target.value to "circle" or "rounded-rect"
+  // Updates your single source of truth: currentShape
+  // Calls redraw() to re-render with the new mask
+  shapeSelect.addEventListener("change", (e) => {
+    currentShape = e.target.value;
+    redraw();
+  });
+
+  canvas.addEventListener("pointerdown", (e) => {
+    if (!img || isDragging) return;
+
+    isDragging = true;
+    activePointerId = e.pointerId;
+
+    startX = e.offsetX;
+    startY = e.offsetY;
+
+    canvas.setPointerCapture(activePointerId);
+  });
+
+  canvas.addEventListener("pointermove", (e) => {
+    if (!isDragging || e.pointerId !== activePointerId || !img) return;
+
+    const dx = e.offsetX - startX;
+    const dy = e.offsetY - startY;
+
+    imgX += dx;
+    imgY += dy;
+
+    startX = e.offsetX;
+    startY = e.offsetY;
+
+    redraw();
+  });
+
+  function endPointerDrag(e) {
+    if (e.pointerId !== activePointerId) return;
+
+    isDragging = false;
+    activePointerId = null;
+
+    canvas.releasePointerCapture(e.pointerId);
+  }
+
+  canvas.addEventListener("pointerup", endPointerDrag);
+  canvas.addEventListener("pointercancel", endPointerDrag);
+
+  function drawRoundedRectPath(ctxRef, x, y, width, height, radius) {
+    const r = Math.min(radius, width / 2, height / 2);
+
+    ctxRef.moveTo(x + r, y);
+    ctxRef.lineTo(x + width - r, y);
+    ctxRef.quadraticCurveTo(x + width, y, x + width, y + r);
+
+    ctxRef.lineTo(x + width, y + height - r);
+    ctxRef.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
+    ctxRef.lineTo(x + r, y + height);
+    ctxRef.quadraticCurveTo(x, y + height, x, y + height - r);
+
+    ctxRef.lineTo(x, y + r);
+    ctxRef.quadraticCurveTo(x, y, x + r, y);
+  }
+
+  function redraw() {
+    if (!img) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    ctx.clearRect(0, 0, rect.width, rect.height);
+
+    ctx.save();
+
+    ctx.beginPath();
+
+    if (currentShape === "circle") {
+      ctx.arc(
+        rect.width / 2,
+        rect.height / 2,
+        rect.width / 2,
+        0,
+        Math.PI * 2
+      );
+    }
+
+    if (currentShape === "rounded-rect") {
+      const padding = 0;
+      const radius = 40;
+
+      drawRoundedRectPath(
+        ctx,
+        padding,
+        padding,
+        rect.width - padding * 2,
+        rect.height - padding * 2,
+        radius
+      );
+    }
+
+    ctx.clip();
+
+    // ctx.drawImage(img, imgX, imgY, drawWidth, drawHeight);
+    const zoomedWidth = drawWidth * scale;
+    const zoomedHeight = drawHeight * scale;
+
+// Keep image centered relative to zoom
+    const offsetX = imgX - (zoomedWidth - drawWidth) / 2;
+    const offsetY = imgY - (zoomedHeight - drawHeight) / 2;
+
+    ctx.drawImage(img, offsetX, offsetY, zoomedWidth, zoomedHeight);
+
+    ctx.restore();
+  }
+
+  // Export button functionality
+  function exportTransparentPNG() {
+      if (!img) return;
+
+      // Create an offscreen canvas (same size as main canvas)
+      const rect = canvas.getBoundingClientRect();
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = rect.width;
+      exportCanvas.height = rect.height;
+
+      const exportCtx = exportCanvas.getContext("2d");
+
+      // IMPORTANT:
+      // Do NOT fill background.
+      // Canvas defaults to transparent.
+      //clip to shape
+      exportCtx.save();
+      exportCtx.beginPath();
+
+      if (currentShape === "circle") {
+          exportCtx.arc(
+          rect.width / 2,
+          rect.height / 2,
+          rect.width / 2,
+          0,
+          Math.PI * 2
+      );
+      }
+
+      if (currentShape === "rounded-rect") {
+          const padding = 0;
+          const radius = 40;
+
+          // Reuse same geometry logic
+          drawRoundedRectPath(
+            exportCtx,
+            padding,
+            padding,
+            rect.width - padding * 2,
+            rect.height - padding * 2,
+            radius
+          );
+      }
+
+      exportCtx.clip();
+
+      // Draw the image using the SAME transform values ()
+      // exportCtx.drawImage(img, imgX, imgY, drawWidth, drawHeight);
+      const zoomedWidth = drawWidth * scale;
+      const zoomedHeight = drawHeight * scale;
+
+      const offsetX = imgX - (zoomedWidth - drawWidth) / 2;
+      const offsetY = imgY - (zoomedHeight - drawHeight) / 2;
+
+      exportCtx.drawImage(img, offsetX, offsetY, zoomedWidth, zoomedHeight);
+
+      exportCtx.restore();
+
+      // Convert to PNG
+      const pngURL = exportCanvas.toDataURL("image/png");
+
+      // Trigger download
+      const link = document.createElement("a");
+      link.href = pngURL;
+      link.download = "cropped-image.png";
+      link.click();
+    }
+
+  upload.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    img = new Image();
+
+    img.onload = () => {
+      scale = 1;
+      zoomRange.value = 1;
+      resizeCanvas(); // this will handle proper scaling and centering
+    };
+
+    img.src = URL.createObjectURL(file);
+  });
+
+    exportBtn.addEventListener("click", exportTransparentPNG);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
