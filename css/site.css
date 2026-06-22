@@ -38,6 +38,29 @@ a { color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
+/* ---------- Accessibility: skip link + focus ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--accent);
+  color: #FFFFFF;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* ---------- Layout container ---------- */
 .wrap {
   max-width: var(--wrap-max);
@@ -212,7 +235,7 @@ ul { list-style: none; }
   padding: 48px 0;
   border-bottom: 1px solid var(--hairline);
 }
-.certs h3 {
+.certs h2 {
   font-family: var(--display);
   font-size: 12px;
   font-weight: 500;

@@ -35,10 +35,12 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav class="site-nav" id="site-nav">
   <div class="wrap site-nav-inner">
     <a class="brand" href="https://echozhao1998.github.io/">Echo Zhao</a>
-    <button type="button" class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">&#9776;</button>
     <ul>
       <li><a class="current" href="index.html">Home</a></li>
       <li><a href="news.html">News</a></li>
@@ -49,7 +51,7 @@
   </div>
 </nav>
 
-<main class="wrap">
+<main class="wrap" id="main">
 
   <section class="hero">
     <div class="portrait">
@@ -119,7 +121,7 @@
   </section>
 
   <section class="certs">
-    <h3>Selected certifications</h3>
+    <h2>Selected certifications</h2>
     <ul>
       <li>
         <span class="cert-name">Google Project Management Certificate</span>
