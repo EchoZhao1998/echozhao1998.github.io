@@ -74,7 +74,11 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0;
+  /* Top/bottom only — the shorthand `padding: 24px 0` used to zero out
+     .wrap's 32px side padding (same specificity, later in file), which made
+     the nav hug the screen edges on mobile. */
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .site-nav .brand {
   font-family: var(--display);
@@ -228,7 +232,9 @@ ul { list-style: none; }
   color: var(--ink);
   line-height: 1.5;
 }
-.skills-row .items span { color: var(--muted); margin: 0 8px; }
+/* 4px + the real spaces in the markup ≈ the old 8px visual gap; the spaces
+   exist so the line can wrap on narrow screens instead of overflowing. */
+.skills-row .items span { color: var(--muted); margin: 0 4px; }
 
 /* ---------- Certifications ---------- */
 .certs {
@@ -682,7 +688,7 @@ ul { list-style: none; }
   .portrait { max-width: 240px; }
   .hero-text h1 { font-size: 40px; }
   .info-strip { grid-template-columns: 1fr; gap: 32px; }
-  .skills-row { grid-template-columns: 1fr; gap: 4px; }
+  .skills-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .certs li { grid-template-columns: 1fr; gap: 4px; }
 
   .project-card {
