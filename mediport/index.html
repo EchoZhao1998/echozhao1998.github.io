@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MediPort &mdash; NF2 Digital Companion | Echo Zhao</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Echo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A UX case study: designing a patient-owned disease timeline and consultation summary for people with Neurofibromatosis Type 2. Research with 38 patients and caregivers, 31 high-fidelity frames, accessibility as the design spine." />
+  <link rel="icon" href="../images/icons/echoWeb-icon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Site styles -->
+  <link rel="stylesheet" type="text/css" href="../css/site.css">
+
+  <style>
+    /* ============================================================
+       Case-study page styles.
+       Extends css/site.css — tokens (--ink, --muted, --accent,
+       --hairline, --display, --body) are inherited, not redefined.
+       Only --teal is new: it is MediPort's product colour, used
+       sparingly so the page stays in the site's Swiss-minimal voice
+       and the product's own identity is quoted, not imitated.
+       #0E7C97 on #FAFAFA measures 4.72:1 — passes WCAG AA for text.
+       ============================================================ */
+    :root { --teal: #0E7C97; --teal-wash: #F0F7F9; }
+
+    /* ---------- Case hero ---------- */
+    .case-hero { padding: 72px 0 0; }
+    .eyebrow {
+      font-family: var(--display); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+      display: block; margin-bottom: 20px;
+    }
+    .eyebrow a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+    .eyebrow a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .case-hero h1 {
+      font-family: var(--display); font-size: 64px; font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1.02; margin-bottom: 14px;
+    }
+    .case-hero .deck {
+      font-family: var(--display); font-size: 23px; font-weight: 400;
+      line-height: 1.35; color: var(--ink-soft); max-width: 720px; margin-bottom: 28px;
+    }
+    .case-hero .lede { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 660px; }
+
+    /* ---------- Fact strip ---------- */
+    .facts {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+      padding: 28px 0; margin: 48px 0 0;
+    }
+    .facts dt {
+      font-family: var(--display); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .facts dd { font-size: 15px; line-height: 1.45; margin: 0; color: var(--ink); }
+
+    /* ---------- Sections ---------- */
+    .case-section { padding: 72px 0 0; }
+    .case-section > .num {
+      font-family: var(--display); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+      display: block; margin-bottom: 14px;
+    }
+    .case-section h2 {
+      font-family: var(--display); font-size: 34px; font-weight: 500;
+      letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 24px; max-width: 760px;
+    }
+    .case-section h3 {
+      font-family: var(--display); font-size: 15px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+      margin: 48px 0 16px; padding-top: 20px; max-width: var(--prose-max);
+      border-top: 1px solid var(--hairline);
+    }
+    .prose { max-width: var(--prose-max); }
+    .prose p { margin-bottom: 18px; font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { font-weight: 600; color: var(--ink); }
+    .prose ul { margin: 0 0 18px; }
+    .prose ul li {
+      position: relative; padding-left: 20px; margin-bottom: 10px;
+      font-size: 17px; line-height: 1.6; color: var(--ink-soft);
+    }
+    .prose ul li::before {
+      content: ""; position: absolute; left: 2px; top: 11px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--teal);
+    }
+
+    /* ---------- Statement block (problem / design question) ---------- */
+    .statement {
+      border-left: 2px solid var(--teal); padding: 4px 0 4px 26px;
+      margin: 32px 0; max-width: var(--prose-max);
+    }
+    .statement .label {
+      font-family: var(--display); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal);
+      display: block; margin-bottom: 10px;
+    }
+    .statement p {
+      font-family: var(--display); font-size: 21px; font-weight: 400;
+      line-height: 1.45; color: var(--ink); margin: 0;
+    }
+
+    /* ---------- Quote ---------- */
+    blockquote.pull {
+      margin: 36px 0; max-width: var(--prose-max);
+      padding: 0 0 0 26px; border-left: 2px solid var(--hairline);
+    }
+    blockquote.pull p {
+      font-family: var(--display); font-size: 24px; font-weight: 400;
+      line-height: 1.4; color: var(--ink); margin: 0 0 12px;
+    }
+    blockquote.pull cite {
+      font-style: normal; font-size: 14px; color: var(--muted);
+    }
+
+    /* ---------- Stat row ---------- */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 36px 0 8px; }
+    .stat { border-top: 2px solid var(--ink); padding-top: 14px; }
+    .stat .n {
+      font-family: var(--display); font-size: 40px; font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1; display: block; margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat .l { font-size: 14px; line-height: 1.45; color: var(--muted); display: block; }
+    .stat-note { font-size: 13px; color: var(--hint); margin-top: 18px; max-width: var(--prose-max); }
+
+    /* ---------- Figures ---------- */
+    figure.shot { margin: 40px 0 0; }
+    figure.shot img {
+      width: 100%; border-radius: 4px; border: 1px solid var(--hairline); background: #FAFAFA;
+    }
+    figure.shot figcaption {
+      font-size: 14px; line-height: 1.55; color: var(--muted);
+      margin-top: 14px; max-width: var(--prose-max);
+    }
+    figure.shot figcaption b { color: var(--ink); font-weight: 600; }
+    figure.shot.narrow { max-width: 420px; }
+    figure.shot.mid { max-width: 720px; }
+
+    .fig-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fig-pair figure.shot { margin-top: 0; }
+    .fig-pair figure.shot img { border: 1px solid var(--hairline); }
+
+    /* Scroll container for the very tall full-summary image */
+    .scrollshot {
+      height: 660px; overflow-y: auto; border: 1px solid var(--hairline);
+      border-radius: 4px; background: #FAFAFA;
+      /* the scroll cue: a hairline shadow at the bottom edge */
+      box-shadow: inset 0 -24px 24px -24px rgba(10, 20, 40, 0.16);
+    }
+    .scrollshot img { display: block; width: 100%; border: 0 !important; border-radius: 0; }
+
+    /* Large process boards open full size in a new tab */
+    a.zoom { display: block; text-decoration: none; position: relative; }
+    a.zoom::after {
+      content: "View full size \2197";
+      position: absolute; right: 12px; bottom: 12px;
+      font-family: var(--display); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.94); color: var(--ink);
+      border: 1px solid var(--hairline); border-radius: 3px;
+      padding: 6px 10px; opacity: 0; transition: opacity 0.15s ease;
+    }
+    a.zoom:hover::after, a.zoom:focus-visible::after { opacity: 1; }
+    @media (hover: none) { a.zoom::after { opacity: 1; } }
+
+    /* ---------- Table ---------- */
+    .case-table { width: 100%; border-collapse: collapse; margin: 28px 0 0; font-size: 15px; }
+    .case-table th {
+      text-align: left; font-family: var(--display); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+      padding: 0 20px 12px 0; border-bottom: 1px solid var(--ink);
+    }
+    .case-table td {
+      padding: 16px 20px 16px 0; border-bottom: 1px solid var(--hairline);
+      vertical-align: top; line-height: 1.55; color: var(--ink-soft);
+    }
+    .case-table td:first-child { color: var(--ink); font-weight: 500; width: 27%; }
+    .table-wrap { overflow-x: auto; }
+
+    /* ---------- Video ---------- */
+    .video-frame {
+      position: relative; width: 100%; max-width: 900px; aspect-ratio: 16 / 9;
+      border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden;
+      background: #F2F2F2; margin-top: 32px;
+    }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* ---------- Deliverables ---------- */
+    .deliverables {
+      border-top: 1px solid var(--hairline); margin-top: 72px; padding-top: 40px;
+    }
+    .deliverables ul { max-width: var(--prose-max); }
+    .deliverables li {
+      display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline;
+      padding: 16px 0; border-bottom: 1px solid var(--hairline); font-size: 15px;
+    }
+    .deliverables li:first-child { border-top: 1px solid var(--hairline); }
+    .deliverables .d-meta { color: var(--muted); font-size: 13px; }
+    .deliverables a {
+      color: var(--ink); text-decoration: none; font-weight: 500;
+      border-bottom: 1px solid var(--hairline); padding-bottom: 2px;
+    }
+    .deliverables a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .deliverables a::after { content: " \2192"; opacity: 0.6; }
+
+    .back-link { margin-top: 64px; font-size: 14px; }
+    .back-link a {
+      color: var(--muted); text-decoration: none;
+      border-bottom: 1px solid var(--hairline); padding-bottom: 3px;
+    }
+    .back-link a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .facts { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .case-hero { padding-top: 40px; }
+      .case-hero h1 { font-size: 40px; }
+      .case-hero .deck { font-size: 19px; }
+      .case-hero .lede { font-size: 16px; }
+      .case-section { padding-top: 52px; }
+      .case-section h2 { font-size: 26px; }
+      .statement p { font-size: 18px; }
+      blockquote.pull p { font-size: 19px; }
+      .stat .n { font-size: 32px; }
+      .fig-pair { grid-template-columns: 1fr; gap: 24px; }
+      .case-section h3 { font-size: 14px; margin-top: 36px; }
+      .deliverables li { grid-template-columns: 1fr; gap: 4px; }
+      .scrollshot { height: 460px; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" id="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="brand" href="../index.html">Echo Zhao</a>
+    <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">&#9776;</button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../news.html">News</a></li>
+      <li><a class="current" href="../projects.html">Projects</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="main">
+
+  <!-- ============ HERO ============ -->
+  <header class="case-hero">
+    <span class="eyebrow"><a href="../projects.html">Projects</a> &nbsp;/&nbsp; UX case study &nbsp;&middot;&nbsp; 2026</span>
+    <h1>MediPort</h1>
+    <p class="deck">A patient-owned disease timeline and consultation summary for people living with Neurofibromatosis Type 2.</p>
+    <p class="lede">
+      NF2 care is lifelong, multi-hospital, and often crosses provinces &mdash; and the disease progressively
+      takes away the hearing the consultation depends on. This project reframed that from a
+      record-<em>storage</em> problem into an information-<em>transmission</em> one, and designed the artefact
+      that carries a decade of history into a ten-minute appointment.
+    </p>
+
+    <dl class="facts">
+      <div><dt>My role</dt><dd>Project lead &middot; product &amp; experience design &middot; user research</dd></div>
+      <div><dt>Team</dt><dd>CareLink Lab &mdash; 3 people (design, accessibility review, medical content)</dd></div>
+      <div><dt>Context</dt><dd>PwC Inclusive Future Lab, Cohort 6 &middot; 6 weeks, Jul&ndash;Aug 2026</dd></div>
+      <div><dt>Output</dt><dd>31 high-fidelity frames &middot; clickable prototype &middot; research &amp; design system</dd></div>
+    </dl>
+  </header>
+
+  <figure class="shot mid">
+    <img src="../images/project/mediport/hero-snapshot.jpg"
+         alt="The MediPort Snapshot screen: a patient header, a Communication Accommodations card asking the clinician to face the patient and confirm decisions in writing, followed by Current Concern and Key Clinical Facts.">
+    <figcaption>
+      The payoff screen. Before any clinical data, the summary tells the clinician <b>how to talk to this patient</b>.
+      That card is the whole thesis of the project in one component.
+    </figcaption>
+  </figure>
+
+  <!-- ============ 01 CONTEXT ============ -->
+  <section class="case-section">
+    <span class="num">01 &mdash; Context</span>
+    <h2>The patient is the only continuous record.</h2>
+    <div class="prose">
+      <p>
+        Neurofibromatosis Type 2 is a rare disorder that produces tumours on the nerves of the brain and spine.
+        Care is lifelong and multidisciplinary, and clinical decisions depend less on any single record than on
+        <strong>change across serial MRI scans over years</strong>. The longitudinal history <em>is</em> the diagnosis.
+      </p>
+      <p>
+        In China there is no dedicated national NF2 centre. Patients move between institutions and provinces, and
+        hospital information systems do not talk to each other. The continuity nobody owns institutionally is
+        therefore carried by the patient &mdash; in a bag of films, in paper reports, and in memory.
+      </p>
+      <p>
+        Progressive hearing loss is a defining feature of NF2. So the person responsible for transmitting years of
+        medical history is doing it in a noisy room, under time pressure, through a channel the disease itself is
+        closing.
+      </p>
+      <h3>My role, and where my own perspective sat</h3>
+      <p>
+        I led the project and owned research end to end: survey design and analysis, the interviews, the
+        point-of-view workshop, persona reduction and problem statements, and co-development of the information
+        architecture, user flows, design system and high-fidelity prototype. I worked with two teammates who
+        covered accessibility review and medical content.
+      </p>
+      <p>
+        I also have NF2 and I am deaf. That is not the headline of this project &mdash; it is a research instrument.
+        It let me recruit inside a patient community that does not open to outside designers, phrase questions in
+        language that did not read as clinical or extractive, and pressure-test the consultation scenario against
+        something I do myself several times a year. Where it created bias, I have said so.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 02 PROBLEM ============ -->
+  <section class="case-section">
+    <span class="num">02 &mdash; The reframe</span>
+    <h2>From storage to transmission.</h2>
+    <div class="prose">
+      <p>
+        We began where most health-record products begin: <em>people lose their documents, so build them a place to
+        put documents.</em> The research did not support it. Patients mostly <strong>had</strong> their records.
+        The information existed &mdash; trapped in paper, in films, in incompatible hospital systems, or in one
+        person's recall &mdash; and then had to be rebuilt out loud, from scratch, in a ten-minute consult.
+      </p>
+      <p>That moved the design context from the archive to the appointment.</p>
+    </div>
+
+    <div class="statement">
+      <span class="label">Problem statement</span>
+      <p>
+        People with NF2 in China must compress a longitudinal, multi-institutional medical history into a short
+        consultation &mdash; sometimes through a communication channel the disease itself is progressively impairing.
+        The information exists, but there is no patient-owned artefact that can reliably carry it into the clinical
+        conversation.
+      </p>
+    </div>
+
+    <div class="statement">
+      <span class="label">Design question</span>
+      <p>
+        How might we help patients own, carry, and communicate their longitudinal medical history across
+        institutions within seconds, without relying on hearing?
+      </p>
+    </div>
+
+    <div class="prose">
+      <p>
+        Framing it this way had one consequence that shaped everything after: accessibility stopped being a
+        compliance pass at the end and became <strong>the product requirement itself</strong>. If the artefact
+        cannot be operated and read by someone who cannot hear, it has not solved the problem it was built for.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 03 RESEARCH ============ -->
+  <section class="case-section">
+    <span class="num">03 &mdash; Research</span>
+    <h2>38 survey responses, four interviews, and one broken assumption.</h2>
+    <div class="prose">
+      <p>
+        I ran a survey in a Chinese NF2 patient community from 28 June to 6 July 2026 (n&nbsp;=&nbsp;38 valid
+        responses), then four semi-structured asynchronous text interviews with two patients and two caregivers.
+        For a disease with this prevalence, 38 is a meaningful sample &mdash; but it is still 38. I have not claimed
+        significance anywhere, and the interviews are treated as pattern-generating, not confirmatory.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="n">0</span><span class="l">of 38 respondents used a structured digital tool to manage their medical history</span></div>
+      <div class="stat"><span class="n">71.1%</span><span class="l">report difficulty when seeing a new doctor or moving between hospitals</span></div>
+      <div class="stat"><span class="n">86.8%</span><span class="l">report at least one impairment affecting how they use clinical or digital systems</span></div>
+      <div class="stat"><span class="n">76.3%</span><span class="l">report hearing loss &mdash; the single largest accessibility factor in the sample</span></div>
+    </div>
+    <p class="stat-note">
+      Also: 65.8% rely on paper records and MRI films, 34.2% have no systematic method at all, and 89.5% have been
+      diagnosed for three or more years &mdash; so these are settled practices, not the confusion of a new diagnosis.
+      Beyond hearing: 39.5% motor difficulty, 39.5% balance difficulty, 28.9% vision impairment.
+    </p>
+
+    <div class="prose">
+      <h3>The assumption that broke</h3>
+      <p>
+        I went in believing record chaos grows with the length of the history. A live retrieval task in the
+        interviews &mdash; <em>find me the date and side of your last surgery, now</em> &mdash; broke that cleanly.
+        A patient of ten-plus years answered from memory in about a second. A caregiver of ten-plus years could not
+        answer at all without going to dig through materials.
+      </p>
+      <p>
+        Pain does not scale with disease duration. It scales with <strong>proxy distance</strong>. Patients live in
+        the body and compress its history into memory; caregivers manage someone else's body, often with the
+        records and the retrieval living in two different people's heads. The highest-pain user is not "the NF2
+        patient" &mdash; it is the person who has to externalise a history they did not experience.
+      </p>
+
+      <h3>What the interviews found that the survey could not</h3>
+      <p>
+        In all four interviews, a hearing family member had at some point acted as the communication bridge. One
+        participant put the cost of that plainly:
+      </p>
+    </div>
+
+    <blockquote class="pull">
+      <p>&ldquo;I feel doctors are unwilling to communicate with me directly.&rdquo;</p>
+      <cite>Patient, 10+ years since diagnosis &mdash; interview #38</cite>
+    </blockquote>
+
+    <div class="prose">
+      <p>
+        This changed what the summary screen was <em>for</em>. Up to that point I had scoped it as a time-saving
+        device. It is better understood as an accessibility mechanism: a shared artefact both people can point at
+        restores a direct patient&ndash;clinician exchange that a relay person quietly removes.
+      </p>
+      <p>
+        Two design mandates came out of the interviews that the original five-screen concept did not satisfy.
+        First, <strong>provenance</strong>: two of four users said they would personally audit the summary, so every
+        claim has to link back to its source document. Second, <strong>paraphrase must be visible as a choice</strong>,
+        because paraphrase is exactly where the trust objections lived.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 04 SYNTHESIS ============ -->
+  <section class="case-section">
+    <span class="num">04 &mdash; Synthesis</span>
+    <h2>Four personas down to one primary, one secondary, and one anti-persona.</h2>
+    <div class="prose">
+      <p>
+        We converged four research personas into a primary caregiver-proxy, a secondary deaf self-navigating
+        patient, and &mdash; deliberately &mdash; an anti-persona: the long-diagnosed, highly capable patient who
+        does not need this product and said so. He does not get a problem statement. He generates constraints.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <a class="zoom" href="../images/project/mediport/persona.jpg" target="_blank" rel="noopener">
+  <img src="../images/project/mediport/persona.jpg"
+           alt="Persona card for a young NF2 patient: profile, accessibility needs, context, current workarounds, bio, and a Challenges and Needs panel.">
+      </a>
+      <figcaption>
+        The secondary persona &mdash; a recently deafened patient self-navigating referrals across three provinces.
+        Her stated need is not storage; it is <b>two-way communication support in the consult</b>, not just captioning her own side.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <a class="zoom" href="../images/project/mediport/journey.jpg" target="_blank" rel="noopener">
+  <img src="../images/project/mediport/journey.jpg"
+           alt="User journey map across six stages — Notice, First Reaction, Seek Verification, Decide, Consult, Aftermath — with rows for task, feeling, pain, touchpoint, and improvement opportunity.">
+      </a>
+      <figcaption>
+        Journey map for a single scenario: the appearance of a new symptom, through to the consult and its aftermath.
+        The emotional low is not the consult itself &mdash; it is <b>Seek Verification</b>, where unverified community
+        stories flood in at the most vulnerable moment. A working artefact, kept as-drawn.
+      </figcaption>
+    </figure>
+
+    <div class="statement">
+      <span class="label">Primary &mdash; the caregiver-proxy</span>
+      <p>
+        She needs to reconstruct and communicate her child's disease progression within a few minutes, because
+        consultations are short, records are scattered across people and institutions, and critical information is
+        easily missed under time pressure.
+      </p>
+    </div>
+
+    <div class="statement">
+      <span class="label">Secondary &mdash; the deaf self-navigator</span>
+      <p>
+        She needs to communicate her history and respond confidently during consultations without relying on hearing
+        or on a family member, because the relay costs her both consultation efficiency and ownership of her own care.
+      </p>
+    </div>
+
+    <div class="prose">
+      <p>
+        Her stated kill-switch is worth recording, because it set an engineering constraint the design had to
+        respect: <strong>one error that reverses a trend and she abandons the tool permanently.</strong> A summary
+        that is confidently wrong about whether a tumour grew is worse than no summary.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 05 DESIGN ============ -->
+  <section class="case-section">
+    <span class="num">05 &mdash; Design</span>
+    <h2>Accessibility comes before the account.</h2>
+    <div class="prose">
+      <p>
+        The clearest decision in the product is also the smallest: the accessibility profile is configured
+        <strong>before</strong> registration, not buried in settings afterwards.
+      </p>
+      <p>
+        The reasoning is direct. If 86.8% of your users have at least one impairment that affects how they use the
+        interface, then asking them to navigate an unadapted sign-up flow first &mdash; in order to reach the
+        controls that would have adapted it &mdash; is a design error. Four dimensions: vision (larger text, higher
+        contrast), hearing (captions, flash and vibration alerts), touch (larger targets, tolerance for tremor),
+        and simplicity (fewer steps, clearer guidance).
+      </p>
+    </div>
+
+    <figure class="shot mid">
+      <img src="../images/project/mediport/accessibility-onboarding.jpg"
+           alt="Two screens: 'Make MediPort Yours' offering Vision, Hearing, Touch and Simplicity options; then 'Who's Using MediPort?' with I'm A Patient and I'm A Caregiver.">
+      <figcaption>
+        Accessibility profile first, then role. The role split is a direct output of the proxy-distance finding &mdash;
+        a caregiver and a patient are not the same user with a different label.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="../images/project/mediport/onboarding-flow.jpg"
+           alt="Four onboarding screens: language choice between English and Simplified Chinese, then three value-proposition screens.">
+      <figcaption>Language choice up front &mdash; the research population is Chinese; the clinical vocabulary and the design work are not.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <h3>Capture has to be camera-first</h3>
+      <p>
+        The primary action on Home is Upload &mdash; photograph a report or import a file. This follows the
+        caregiver evidence: the record enters the system as a photo of a piece of paper in a waiting room, because
+        that is when it is in your hand. Organising it later is the product's job, not the user's.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <img src="../images/project/mediport/home-and-capture.jpg"
+           alt="Three screens: the Home screen with Upload as the primary action, a file browser, and a captured MRI examination report ready to save or summarise.">
+      <figcaption>
+        Home, file capture, and a captured MRI report. After capture the user chooses to <b>save</b> or
+        <b>summarise</b> &mdash; the paraphrase step is always an explicit choice, never a silent one.
+      </figcaption>
+    </figure>
+
+    <div class="prose">
+      <h3>The consultation summary: three tabs, one argument</h3>
+      <p>
+        The summary is organised the way a clinician orients to a patient, not the way a hospital files records:
+        <strong>Snapshot</strong> (who this is, how to talk to them, what changed, the timeline),
+        <strong>Symptom</strong> (the current complaint plus structured NF2 symptom screening), and
+        <strong>Medical Background</strong> (history, surgical, medication, allergy, family).
+      </p>
+      <p>
+        The Communication Accommodations card sits above the clinical content on purpose. It is the one piece of
+        information that changes the next ten minutes for everyone in the room, and it is the piece a patient who
+        cannot hear is least able to deliver verbally.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <img src="../images/project/mediport/summary-tabs.jpg"
+           alt="Three screens side by side showing the Snapshot, Symptom and Medical Background tabs of the consultation summary.">
+      <figcaption>Snapshot &middot; Symptom &middot; Medical Background.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <h3>Every claim keeps its receipt</h3>
+      <p>
+        Timeline entries carry <em>Report</em> and <em>Films</em> attachments, so a clinician who wants the actual
+        radiology &mdash; or a caregiver auditing the summary before the appointment &mdash; is one tap from the
+        source. This is the provenance mandate from the interviews, made concrete. It is also the honest answer to
+        "why not just ask a general AI": a chat window does not hold structured, sourced, longitudinal data across
+        years.
+      </p>
+    </div>
+
+    <div class="fig-pair">
+      <figure class="shot">
+        <img src="../images/project/mediport/timeline-evidence.jpg"
+             alt="A timeline event card for 'Symptom Onset and First Visit' with related symptoms listed and Report and Films attachments at the bottom.">
+        <figcaption>A timeline event with its source report and films attached.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="scrollshot">
+          <img src="../images/project/mediport/snapshot-full.jpg"
+               alt="The complete Snapshot tab as one continuous scroll, from patient header and communication accommodations through current concern, key clinical facts, and the full medical timeline.">
+        </div>
+        <figcaption>The full Snapshot as one scroll &mdash; scroll inside the frame. Roughly sixty seconds of reading replaces a history the patient would otherwise have to speak.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 06 WALKTHROUGH ============ -->
+  <section class="case-section">
+    <span class="num">06 &mdash; Prototype</span>
+    <h2>Walkthrough.</h2>
+    <div class="prose">
+      <p>The clickable prototype end to end: first launch, accessibility setup, record capture, and the consultation summary.</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1VeSNdxPfDrgpclxiK1_76f4eyNPoFTJ1/preview"
+              title="MediPort prototype walkthrough video"
+              allow="autoplay" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ============ 07 SCOPE ============ -->
+  <section class="case-section">
+    <span class="num">07 &mdash; Scope</span>
+    <h2>What I cut, and why.</h2>
+    <div class="prose">
+      <p>
+        The application that won the place pitched AI medical-record ingestion as the core innovation. Six weeks in,
+        I moved it to the roadmap. Below is the honest difference between what was proposed and what shipped.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="case-table">
+        <thead>
+          <tr><th>As submitted</th><th>As executed</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI medical-record ingestion as the core innovation</td>
+            <td>Roadmap capability; not implemented in the prototype</td>
+            <td>Reliable extraction could not be validated against real medical records in six weeks. Shipping an unvalidated parser into a product whose users audit every number would have failed on its own terms.</td>
+          </tr>
+          <tr>
+            <td>Community, research digest and health-record modules</td>
+            <td>Static concept cards and roadmap items</td>
+            <td>Narrowing scope let us deepen the one pathway that carried the thesis.</td>
+          </tr>
+          <tr>
+            <td>Five core screens</td>
+            <td>31 high-fidelity frames</td>
+            <td>A realistic end-to-end experience needed onboarding, accessibility setup, capture, and the three-tab summary. The original five described a demo, not a product.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <h3>One cut I want to defend properly</h3>
+      <p>
+        A patient-community feature is the obvious thing to build for a rare disease, and the research is exactly
+        why we did not. In one interview, a caregiver had treated a child's sudden hearing drop with medication
+        recommended by group members and bought over the counter. Another respondent described group advice as
+        "unverified or conflicting."
+      </p>
+      <p>
+        A community or medication-log feature that ingested that uncritically would <strong>launder unverified
+        advice into official-looking UI</strong>. It stays a concept card. If it ships later, it ships with an
+        explicit unverified-information boundary, and the legitimate version of the underlying need is closer to
+        clinical-trial access than to a discussion board.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <img src="../images/project/mediport/concept-roadmap.jpg"
+           alt="Three concept screens: a patient community feed, a Care Hub with NF2 information and support resources, and a year-based document archive.">
+      <figcaption>Concept cards, held at concept level: community, Care Hub, document archive.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ 08 REFLECTION ============ -->
+  <section class="case-section">
+    <span class="num">08 &mdash; Outcome &amp; reflection</span>
+    <h2>What it does, and what I still can't claim.</h2>
+    <div class="prose">
+      <p>
+        The project delivered a 31-frame clickable prototype covering first launch through consultation
+        preparation, alongside the research reports, personas, journey and empathy maps, problem statements,
+        information architecture, user flows, design-system components and accessibility criteria that produced it.
+      </p>
+
+      <h3>The limits, stated plainly</h3>
+      <p>
+        This is concept validation. The prototype has not been released clinically; there is no real-world usage or
+        outcome data; formal usability testing and clinical validation are still ahead. So the claims stop at two
+        things: the research documents and quantifies a problem that was previously anecdotal, and the prototype
+        demonstrates a coherent, accessible, clinically credible response to it.
+      </p>
+
+      <h3>The critique I did not design around</h3>
+      <p>
+        The most useful hour of the whole project was an interviewee dismantling the concept. His argument: hospital
+        films are already going to the cloud, so re-solving film-carrying is late; and general-purpose LLMs are
+        improving fast enough that a wrapper around summarisation gets crushed &mdash; "why wouldn't I just use the
+        LLM directly?"
+      </p>
+      <p>
+        He is right that "AI summary" is not a defensible differentiator. What survives the critique is narrower and
+        more honest: <strong>structured longitudinal data with provenance, plus accessibility-first consultation
+        interaction</strong>. A chat window does not hold that across years; a cloud-film QR code does not organise
+        it. I would rather publish the version of this project that has absorbed that argument than the version
+        that avoided it.
+      </p>
+      <p>
+        Worth noting he was also the participant with the <em>least</em> pain &mdash; stable disease, solo, perfect
+        recall. The anti-persona rejecting a product built for proxies is the expected result, not a fatal one. But
+        "the skeptic isn't our user" is a comfortable sentence, and I did not want to use it to avoid the substance.
+      </p>
+
+      <h3>What I would do next</h3>
+      <ul>
+        <li>Moderated usability testing with caregiver-proxies specifically, since they are the primary persona and the hardest to recruit.</li>
+        <li>Re-cut the survey by role to test the proxy-distance finding against n = 38 rather than n = 4.</li>
+        <li>Test the summary with clinicians, not only patients &mdash; the artefact has two readers and I have only researched one of them.</li>
+        <li>Prototype the provenance interaction under time pressure: can a clinician actually get from a claim to its source film fast enough to bother?</li>
+      </ul>
+
+      <h3>What I took from it</h3>
+      <p>
+        I came into this from data science, and the habit that transferred best was refusing to let a number stand
+        without asking what decision it changes. The habit I had to build was the opposite one: sitting with four
+        contradictory interviews long enough to find the structure underneath, instead of reaching for the sample
+        size that would have made the contradiction go away.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ DELIVERABLES ============ -->
+  <section class="deliverables">
+    <span class="section-label" style="display:block;margin-bottom:20px;">Deliverables</span>
+    <ul>
+      <li>
+        <span><a href="../files/MediPort_PwC_Final_Report.pdf" target="_blank" rel="noopener">Project final report &mdash; PwC Inclusive Future Lab, Cohort 6</a></span>
+        <span class="d-meta">PDF &middot; 1.2&nbsp;MB</span>
+      </li>
+      <li>
+        <span><a href="https://drive.google.com/file/d/1VeSNdxPfDrgpclxiK1_76f4eyNPoFTJ1/view" target="_blank" rel="noopener">Prototype walkthrough</a></span>
+        <span class="d-meta">Video</span>
+      </li>
+    </ul>
+    <p class="back-link"><a href="../projects.html">Back to all projects</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer wrap">
+  <span>&copy; Wanting Echo Zhao <span id="year"></span></span>
+  <span>echozhao1998.github.io</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
