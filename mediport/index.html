@@ -31,7 +31,7 @@
     /* ---------- Case hero ---------- */
     .case-hero { padding: 72px 0 0; }
     .eyebrow {
-      font-family: var(--display); font-size: 12px; font-weight: 500;
+      font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
       display: block; margin-bottom: 20px;
     }
@@ -65,7 +65,7 @@
       font-family: var(--display); font-size: 16px; font-weight: 500;
       color: var(--ink); letter-spacing: -0.005em;
     }
-    .award .who { font-size: 14px; color: var(--muted); }
+    .award .who { font-size: 16px; color: var(--muted); }
     .award .who .sep { white-space: nowrap; }
     .award a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
     .award a:hover { color: var(--accent); border-bottom-color: var(--accent); }
@@ -77,15 +77,15 @@
       padding: 28px 0; margin: 48px 0 0;
     }
     .facts dt {
-      font-family: var(--display); font-size: 11px; font-weight: 500;
+      font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
     }
-    .facts dd { font-size: 15px; line-height: 1.45; margin: 0; color: var(--ink); }
+    .facts dd { font-size: 16px; line-height: 1.55; margin: 0; color: var(--ink); }
 
     /* ---------- Sections ---------- */
     .case-section { padding: 72px 0 0; }
     .case-section > .num {
-      font-family: var(--display); font-size: 11px; font-weight: 500;
+      font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
       display: block; margin-bottom: 14px;
     }
@@ -94,7 +94,7 @@
       letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 24px; max-width: 760px;
     }
     .case-section h3 {
-      font-family: var(--display); font-size: 15px; font-weight: 600;
+      font-family: var(--display); font-size: 17px; font-weight: 600;
       letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
       margin: 48px 0 16px; padding-top: 20px; max-width: var(--prose-max);
       border-top: 1px solid var(--hairline);
@@ -119,7 +119,7 @@
       margin: 32px 0; max-width: var(--prose-max);
     }
     .statement .label {
-      font-family: var(--display); font-size: 11px; font-weight: 500;
+      font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal);
       display: block; margin-bottom: 10px;
     }
@@ -138,7 +138,7 @@
       line-height: 1.4; color: var(--ink); margin: 0 0 12px;
     }
     blockquote.pull cite {
-      font-style: normal; font-size: 14px; color: var(--muted);
+      font-style: normal; font-size: 16px; color: var(--muted);
     }
 
     /* ---------- Stat row ---------- */
@@ -149,8 +149,8 @@
       letter-spacing: -0.02em; line-height: 1; display: block; margin-bottom: 8px;
       font-variant-numeric: tabular-nums;
     }
-    .stat .l { font-size: 14px; line-height: 1.45; color: var(--muted); display: block; }
-    .stat-note { font-size: 13px; color: var(--hint); margin-top: 18px; max-width: var(--prose-max); }
+    .stat .l { font-size: 16px; line-height: 1.55; color: var(--muted); display: block; }
+    .stat-note { font-size: 16px; line-height: 1.6; color: var(--muted); margin-top: 18px; max-width: var(--prose-max); }
 
     /* ---------- Figures ---------- */
     figure.shot { margin: 40px 0 0; }
@@ -158,7 +158,7 @@
       width: 100%; border-radius: 4px; border: 1px solid var(--hairline); background: #FAFAFA;
     }
     figure.shot figcaption {
-      font-size: 14px; line-height: 1.55; color: var(--muted);
+      font-size: 16px; line-height: 1.6; color: var(--muted);
       margin-top: 14px; max-width: var(--prose-max);
     }
     figure.shot figcaption b { color: var(--ink); font-weight: 600; }
@@ -177,13 +177,14 @@
       box-shadow: inset 0 -24px 24px -24px rgba(10, 20, 40, 0.16);
     }
     .scrollshot img { display: block; width: 100%; border: 0 !important; border-radius: 0; }
+    .scrollshot:focus-visible { outline-offset: 4px; }
 
     /* Large process boards open full size in a new tab */
     a.zoom { display: block; text-decoration: none; position: relative; }
     a.zoom::after {
       content: "View full size \2197";
       position: absolute; right: 12px; bottom: 12px;
-      font-family: var(--display); font-size: 11px; font-weight: 500;
+      font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.08em; text-transform: uppercase;
       background: rgba(255, 255, 255, 0.94); color: var(--ink);
       border: 1px solid var(--hairline); border-radius: 3px;
@@ -193,9 +194,9 @@
     @media (hover: none) { a.zoom::after { opacity: 1; } }
 
     /* ---------- Table ---------- */
-    .case-table { width: 100%; border-collapse: collapse; margin: 28px 0 0; font-size: 15px; }
+    .case-table { width: 100%; border-collapse: collapse; margin: 28px 0 0; font-size: 16px; }
     .case-table th {
-      text-align: left; font-family: var(--display); font-size: 11px; font-weight: 500;
+      text-align: left; font-family: var(--display); font-size: 16px; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
       padding: 0 20px 12px 0; border-bottom: 1px solid var(--ink);
     }
@@ -221,10 +222,10 @@
     .deliverables ul { max-width: var(--prose-max); }
     .deliverables li {
       display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline;
-      padding: 16px 0; border-bottom: 1px solid var(--hairline); font-size: 15px;
+      padding: 16px 0; border-bottom: 1px solid var(--hairline); font-size: 16px;
     }
     .deliverables li:first-child { border-top: 1px solid var(--hairline); }
-    .deliverables .d-meta { color: var(--muted); font-size: 13px; }
+    .deliverables .d-meta { color: var(--muted); font-size: 16px; }
     .deliverables a {
       color: var(--ink); text-decoration: none; font-weight: 500;
       border-bottom: 1px solid var(--hairline); padding-bottom: 2px;
@@ -232,12 +233,16 @@
     .deliverables a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     .deliverables a::after { content: " \2192"; opacity: 0.6; }
 
-    .back-link { margin-top: 64px; font-size: 14px; }
+    .back-link { margin-top: 64px; font-size: 16px; }
     .back-link a {
       color: var(--muted); text-decoration: none;
       border-bottom: 1px solid var(--hairline); padding-bottom: 3px;
     }
     .back-link a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* Keep navigation readable and touch-friendly on this accessibility-led case study. */
+    .site-nav ul a { font-size: 16px; }
+    .nav-toggle { min-width: 44px; min-height: 44px; }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 900px) {
@@ -248,16 +253,24 @@
       .case-hero { padding-top: 40px; }
       .case-hero h1 { font-size: 40px; }
       .case-hero .deck { font-size: 19px; }
-      .case-hero .lede { font-size: 16px; }
+      .case-hero .lede { font-size: 17px; }
       .case-section { padding-top: 52px; }
       .case-section h2 { font-size: 26px; }
       .statement p { font-size: 18px; }
       blockquote.pull p { font-size: 19px; }
       .stat .n { font-size: 32px; }
       .fig-pair { grid-template-columns: 1fr; gap: 24px; }
-      .case-section h3 { font-size: 14px; margin-top: 36px; }
+      .case-section h3 { font-size: 17px; margin-top: 36px; }
       .deliverables li { grid-template-columns: 1fr; gap: 4px; }
       .scrollshot { height: 460px; }
+    }
+    @media (max-width: 520px) {
+      .facts, .stats { grid-template-columns: 1fr; }
+      .case-hero h1 { font-size: 38px; }
+      .wrap { padding-left: 20px; padding-right: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
@@ -265,7 +278,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="site-nav" id="site-nav">
+<nav class="site-nav" id="site-nav" aria-label="Primary navigation">
   <div class="wrap site-nav-inner">
     <a class="brand" href="../index.html">Echo Zhao</a>
     <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="var n=document.getElementById('site-nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">&#9776;</button>
@@ -285,7 +298,7 @@
   <header class="case-hero">
     <span class="eyebrow"><a href="../projects.html">Projects</a> &nbsp;/&nbsp; UX case study &nbsp;&middot;&nbsp; 2026</span>
     <h1>MediPort</h1>
-    <p class="deck">A patient-owned disease timeline and consultation summary for people living with Neurofibromatosis Type 2.</p>
+    <p class="deck">A patient-owned health timeline and consultation summary for people living with neurofibromatosis type 2 (NF2).</p>
     <div class="award">
       <span class="tag">Best Innovation Award</span>
       <span class="what">PwC Inclusive Future Lab 2026</span>
@@ -294,10 +307,10 @@
     </div>
 
     <p class="lede">
-      NF2 care is lifelong, multi-hospital, and often crosses provinces &mdash; and the disease progressively
-      takes away the hearing the consultation depends on. This project reframed that from a
-      record-<em>storage</em> problem into an information-<em>transmission</em> one, and designed the artefact
-      that carries a decade of history into a ten-minute appointment.
+      NF2 care is lifelong, often involves several hospitals, and may span multiple provinces. At the same time,
+      progressive hearing loss can make clinical conversations increasingly difficult. This project reframed the
+      challenge from storing records to communicating essential information, then designed a tool that can bring
+      a decade of history into a ten-minute appointment.
     </p>
 
     <dl class="facts">
@@ -345,7 +358,7 @@
         covered accessibility review and medical content.
       </p>
       <p>
-        I also have NF2 and I am deaf. That is not the headline of this project &mdash; it is a research instrument.
+        I also live with NF2 and am deaf. That experience was not the headline of this project; it informed how I conducted the research.
         It let me recruit inside a patient community that does not open to outside designers, phrase questions in
         language that did not read as clinical or extractive, and pressure-test the consultation scenario against
         something I do myself several times a year. Where it created bias, I have said so.
@@ -430,8 +443,9 @@
       <p>
         Pain does not scale with disease duration. It scales with <strong>proxy distance</strong>. Patients live in
         the body and compress its history into memory; caregivers manage someone else's body, often with the
-        records and the retrieval living in two different people's heads. The highest-pain user is not "the NF2
-        patient" &mdash; it is the person who has to externalise a history they did not experience.
+        records and the retrieval living in two different people's heads. The person with the greatest difficulty
+        may not be the patient. It is often the person who must reconstruct and communicate a history they did not
+        experience firsthand.
       </p>
 
       <h3>What the interviews found that the survey could not</h3>
@@ -515,7 +529,7 @@
 
     <div class="prose">
       <p>
-        Her stated kill-switch is worth recording, because it set an engineering constraint the design had to
+        Her threshold for losing trust is worth recording because it set an engineering constraint the design had to
         respect: <strong>one error that reverses a trend and she abandons the tool permanently.</strong> A summary
         that is confidently wrong about whether a tumour grew is worse than no summary.
       </p>
@@ -612,7 +626,7 @@
         <figcaption>A timeline event with its source report and films attached.</figcaption>
       </figure>
       <figure class="shot">
-        <div class="scrollshot">
+        <div class="scrollshot" tabindex="0" role="region" aria-label="Scrollable image of the complete MediPort Snapshot screen">
           <img src="../images/project/mediport/snapshot-full.jpg"
                alt="The complete Snapshot tab as one continuous scroll, from patient header and communication accommodations through current concern, key clinical facts, and the full medical timeline.">
         </div>
@@ -727,8 +741,8 @@
       <h3>The critique I did not design around</h3>
       <p>
         The most useful hour of the whole project was an interviewee dismantling the concept. His argument: hospital
-        films are already going to the cloud, so re-solving film-carrying is late; and general-purpose LLMs are
-        improving fast enough that a wrapper around summarisation gets crushed &mdash; "why wouldn't I just use the
+        films are already moving to the cloud, so designing another way to carry them may solve a fading problem; general-purpose LLMs are
+        also improving fast enough that a thin summarisation layer may offer little lasting value: "Why wouldn't I just use the
         LLM directly?"
       </p>
       <p>
@@ -744,20 +758,42 @@
         "the skeptic isn't our user" is a comfortable sentence, and I did not want to use it to avoid the substance.
       </p>
 
-      <h3>What I would do next</h3>
+      <h3>Future direction: from product concept to rare-disease advocacy</h3>
+      <p>
+        The next phase should not be limited to adding product features. MediPort can become a practical advocacy
+        tool: one that helps people with rare diseases communicate on equal terms, makes access needs visible
+        without requiring repeated self-advocacy, and gives patients more control over how their stories travel
+        across institutions. To move responsibly in that direction, I would:
+      </p>
       <ul>
-        <li>Moderated usability testing with caregiver-proxies specifically, since they are the primary persona and the hardest to recruit.</li>
-        <li>Re-cut the survey by role to test the proxy-distance finding against n = 38 rather than n = 4.</li>
-        <li>Test the summary with clinicians, not only patients &mdash; the artefact has two readers and I have only researched one of them.</li>
-        <li>Prototype the provenance interaction under time pressure: can a clinician actually get from a claim to its source film fast enough to bother?</li>
+        <li>Run moderated usability tests with patients and caregiver-proxies, including people with combined hearing, vision, balance, and motor access needs.</li>
+        <li>Analyse the survey by patient and caregiver role to test the proxy-distance finding across all 38 responses, rather than relying on four interviews.</li>
+        <li>Co-design and test the consultation summary with clinicians. The summary serves both patients and clinicians, but this study researched only one side of that exchange.</li>
+        <li>Test whether users and clinicians can move from a summary claim to its source report or scan quickly and accurately under appointment conditions.</li>
+        <li>Define patient-governed consent, correction, privacy, and data-sharing rules before introducing automated extraction or summarisation.</li>
+        <li>Partner with NF2 and broader rare-disease organisations to adapt the model beyond one diagnosis, while preserving disease-specific needs instead of forcing every condition into the same template.</li>
+        <li>Turn the research into advocacy resources for hospitals: practical guidance on written communication, direct patient engagement, accessible appointments, and continuity of care across institutions.</li>
       </ul>
 
-      <h3>What I took from it</h3>
+      <h3>What this work changed for me</h3>
       <p>
-        I came into this from data science, and the habit that transferred best was refusing to let a number stand
-        without asking what decision it changes. The habit I had to build was the opposite one: sitting with four
-        contradictory interviews long enough to find the structure underneath, instead of reaching for the sample
-        size that would have made the contradiction go away.
+        My background in data science taught me not to present a number without asking what decision it should
+        change. This project taught me the complementary lesson: lived experiences do not become irrelevant when
+        they conflict. The contradiction between patients with strong recall and caregivers struggling to reconstruct
+        a history revealed the role of proxy distance and changed the product's primary user.
+      </p>
+      <p>
+        It also deepened my understanding of accessibility. Accessibility is not a settings panel or a final
+        compliance review; it shapes who can participate, who is addressed directly, and who retains control in a
+        clinical conversation. For rare-disease design, that means success cannot be measured only by speed or
+        completion rates. It must also be measured by trust, autonomy, comprehension, and whether the patient leaves
+        with an accurate shared record of what was decided.
+      </p>
+      <p>
+        Finally, the project clarified the role I want to take in rare-disease advocacy: not to speak for an entire
+        community, but to create structures through which patients can represent themselves, challenge errors, and
+        influence the systems that shape their care. MediPort remains an unvalidated concept, but the research offers
+        a grounded starting point for that longer-term work.
       </p>
     </div>
   </section>
