@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="author" content="Echo Zhao">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A UX case study: designing a patient-owned disease timeline and consultation summary for people with Neurofibromatosis Type 2. Research with 38 patients and caregivers, 31 high-fidelity frames, accessibility as the design spine." />
+  <meta name="description" content="A UX case study: designing a patient-owned disease timeline and consultation summary for people with Neurofibromatosis Type 2. Winner of the Best Innovation Award, PwC Inclusive Future Lab 2026. Research with 38 patients and caregivers, 31 high-fidelity frames, accessibility as the design spine." />
   <link rel="icon" href="../images/icons/echoWeb-icon.png" type="image/png">
 
   <!-- Fonts -->
@@ -46,6 +46,29 @@
       line-height: 1.35; color: var(--ink-soft); max-width: 720px; margin-bottom: 28px;
     }
     .case-hero .lede { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 660px; }
+
+    /* ---------- Award badge ----------
+       Deliberately quiet: a hairline card, no gold, no ribbon. The award
+       carries its own weight; dressing it up would read as overselling. */
+    .award {
+      display: inline-flex; align-items: baseline; flex-wrap: wrap;
+      gap: 6px 14px; margin: 0 0 30px;
+      border: 1px solid var(--hairline); border-left: 2px solid var(--teal);
+      border-radius: 3px; background: var(--teal-wash);
+      padding: 13px 18px;
+    }
+    .award .tag {
+      font-family: var(--display); font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal);
+    }
+    .award .what {
+      font-family: var(--display); font-size: 16px; font-weight: 500;
+      color: var(--ink); letter-spacing: -0.005em;
+    }
+    .award .who { font-size: 13.5px; color: var(--muted); }
+    .award .who .sep { white-space: nowrap; }
+    .award a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+    .award a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
     /* ---------- Fact strip ---------- */
     .facts {
@@ -263,6 +286,13 @@
     <span class="eyebrow"><a href="../projects.html">Projects</a> &nbsp;/&nbsp; UX case study &nbsp;&middot;&nbsp; 2026</span>
     <h1>MediPort</h1>
     <p class="deck">A patient-owned disease timeline and consultation summary for people living with Neurofibromatosis Type 2.</p>
+    <div class="award">
+      <span class="tag">Best Innovation Award</span>
+      <span class="what">PwC Inclusive Future Lab 2026</span>
+      <span class="who">Awarded by PwC China and the ILO Global Business and Disability Network, China
+        chapter <span class="sep">&middot;&nbsp;<a href="../images/project/mediport/pwc-award-certificate.jpg" target="_blank" rel="noopener">see the certificate</a></span></span>
+    </div>
+
     <p class="lede">
       NF2 care is lifelong, multi-hospital, and often crosses provinces &mdash; and the disease progressively
       takes away the hearing the consultation depends on. This project reframed that from a
@@ -674,6 +704,17 @@
         preparation, alongside the research reports, personas, journey and empathy maps, problem statements,
         information architecture, user flows, design-system components and accessibility criteria that produced it.
       </p>
+      <p>
+        At the programme close it was given the <strong>Best Innovation Award</strong> by PwC China and the ILO
+        Global Business and Disability Network's China chapter, from the Cohort 6 field.
+      </p>
+      <p>
+        I want to be precise about what that does and does not establish. A jury of inclusion and industry
+        practitioners judged the problem framing and the design response to be the strongest in the cohort. That is
+        a verdict on the <em>reasoning</em>, and I will take it. It is not evidence that the product works &mdash;
+        no patient has yet used this to get through an appointment. Those are different claims, and the award does
+        not merge them.
+      </p>
 
       <h3>The limits, stated plainly</h3>
       <p>
@@ -736,6 +777,10 @@
       <li>
         <span><a href="https://drive.google.com/file/d/1VeSNdxPfDrgpclxiK1_76f4eyNPoFTJ1/view" target="_blank" rel="noopener">Prototype walkthrough</a></span>
         <span class="d-meta">Video</span>
+      </li>
+      <li>
+        <span><a href="../images/project/mediport/pwc-award-certificate.jpg" target="_blank" rel="noopener">Certificate of Honor &mdash; Best Innovation Award</a></span>
+        <span class="d-meta">Image &middot; PwC &amp; ILO GBDN China</span>
       </li>
     </ul>
     <p class="back-link"><a href="../projects.html">Back to all projects</a></p>

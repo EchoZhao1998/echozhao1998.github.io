@@ -215,6 +215,50 @@ ul { list-style: none; }
   margin-top: 2px;
 }
 
+/* ---------- Recognition (homepage) ----------
+   Same rhythm as .certs — a labelled list of rules — so an award reads as one
+   more verifiable credential rather than a banner. The accent rule on the left
+   is the only thing marking it out. */
+.recognition {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.recognition h2 {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.recognition .award-row {
+  max-width: var(--prose-max);
+  border-left: 2px solid var(--accent);
+  padding: 2px 0 2px 20px;
+}
+.recognition .award-name {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  display: block;
+  margin-bottom: 6px;
+}
+.recognition .award-for { font-size: 15px; color: var(--ink-soft); display: block; margin-bottom: 8px; }
+.recognition .award-meta { font-size: 13.5px; color: var(--muted); display: block; }
+/* each separator travels with the link after it, so a wrap never orphans a "·" */
+.recognition .award-meta .sep { white-space: nowrap; }
+.recognition a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.recognition a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
 /* ---------- Skills ---------- */
 .skills {
   padding: 32px 0 8px;
